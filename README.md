@@ -17,7 +17,7 @@ The panel is 184 × 104 × 1.6 mm, with three boards and six drilled breakaway t
 
 Modified 2026-10-11 from upstream commit `05843dd0e7551cbf20dc831514174f446f376858`. Checks found no new electrical DRC errors, unconnected items or single-board schematic/PCB mismatches. Inherited DRC/ERC findings are documented in the [single-board notes](pcb/mobo/README.md) and [panel validation reports](pcb/mobo-panel3/validation). This derivative has not been physically prototyped.
 
-Hardware remains under CERN-OHL-W v2; see [LICENSE](LICENSE). The modified PCBs use crazydart branding. Other upstream designs and documentation remain below.
+Hardware remains under CERN-OHL-W v2; see [LICENSE](LICENSE). The modified PCBs use AI Herding Cats branding and credit Opulo for the original design. Other upstream designs and documentation remain below.
 
 ## Upstream LumenPnP Feeders
 The LumenPnP Feeders are open source pick and place feeders to aid in [Mid-Scale Manufacturing](https://stephenhawes.com/level-2-manufacturing/).

@@ -4,11 +4,15 @@ Open **mobo.kicad_pro** in KiCad 10. The schematic and single-board PCB use **U1
 
 The remaining component locations, 247 pads, 842 tracks/vias and schematic connections match upstream REV12. R18 and R19 remain 1 MΩ. No firmware or pin assignment changes are introduced. The original board outline and holes remain unchanged.
 
-The silkscreen identifies this derivative as **REV12CD / crazydart**. Upstream product branding was removed from the modified board; the open-hardware symbol and upstream copyright/license attribution are retained. Custom footprint paths are relative to this repository. The historical MHS110FRGBCT footprint is included in `../../lib/kicad/index.pretty` so D1 resolves without the upstream author's local library.
+The silkscreen identifies this derivative as **Feeder REV12CD / AI Herding Cats**. Upstream product branding was removed from the modified board; the open-hardware symbol and upstream copyright/license attribution are retained. Custom footprint paths are relative to this repository. The historical MHS110FRGBCT footprint is included in `../../lib/kicad/index.pretty` so D1 resolves without the upstream author's local library.
+
+The single-board artwork places the **AI Herding Cats** robot-and-cat logo and name on the back silkscreen, oriented for the assembled feeder. **Feeder REV12CD**, **SN:**, **aiherdingcats.com**, and **github.com/crazydart/feeder** appear near the solid white **20 × 6 mm** write-in area, sized for four handwritten serial-number characters. The back explicitly credits **Original design: Opulo / Open-source hardware**. The front branding also reads **AI Herding Cats**. The artwork introduces no new DRC findings; the electrical design is unchanged. Both previews show the installed orientation. [Back preview](back-silkscreen-preview.png) · [Front preview](front-silkscreen-preview.png) · [Original vector logo and placement notes](artwork/README.md).
 
 ## Three-board panel and manufacturing
 
 Open [../mobo-panel3/feeder-rev12cd-panel3.kicad_pro](../mobo-panel3/feeder-rev12cd-panel3.kicad_pro) for the editable panel. The panel is generated from this single-board master and contains three electrically separate copies with unique CAD references.
+
+**The panel and its fabrication ZIP still contain the earlier artwork.** They have deliberately not been regenerated during the single-board back-artwork draft. Their manifest records the previously released source, so its single-board source hashes will differ until the artwork is finalized and the panel is regenerated.
 
 See the [panel README](../mobo-panel3/README.md), [ordering instructions](../mobo-panel3/ORDER-NOTES.md), and [stencil/PnP handoff](../mobo-panel3/STENCIL-AND-PNP.md). The current [BOM](bom/rev12cd-bom.csv) includes population notes. D1/D3 and the optional programming headers still require a final assembly choice; U2 is absent.
 
