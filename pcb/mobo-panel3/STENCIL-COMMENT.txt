@@ -1,0 +1,1 @@
+Top paste only, 1:1 apertures, 0.10mm foil. Match 184x104mm 3-up panel; keep spacing/orientation. U2 is absent. Ignore mask-only openings. No extra apertures.

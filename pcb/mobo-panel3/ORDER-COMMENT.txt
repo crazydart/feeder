@@ -1,0 +1,1 @@
+3 identical PCBs, 184x104x1.6mm customer panel. Route GM1 slots; retain 18 breakaway tabs with 144x0.6mm NPTH holes. No V-cuts. Keep tabs clear of connectors/buttons as drawn. Ship intact panels.

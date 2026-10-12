@@ -1,0 +1,25 @@
+{
+  "omitted_dnp": [],
+  "paste_pad_counts": {
+    "front": 654,
+    "back": 30
+  },
+  "placement_candidates": 165,
+  "electrical_master_sha256": "1ba3f1eba192aa2da1370e5c0c495f9c1e2b3dc39a74d19e7f58900a0ef47578",
+  "paste_exported_from_electrical_master": true,
+  "u2_absent_from_pcb": true,
+  "exported_objects": {
+    "front": {
+      "Line": 24,
+      "Region": 6,
+      "Flash": 654
+    },
+    "back": {
+      "Flash": 30
+    }
+  },
+  "source_paste_geometry_preserved": true,
+  "additional_front_graphics": "Two original J5 mounting paste polygons per board, including their boundary strokes",
+  "pnp_panel_offsets_verified": true,
+  "pnp_rotations_are_unadjusted_cad": true
+}

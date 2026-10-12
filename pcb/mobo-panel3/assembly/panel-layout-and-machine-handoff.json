@@ -1,0 +1,135 @@
+{
+  "panel_mm": [
+    184,
+    104,
+    1.6
+  ],
+  "columns": 3,
+  "rows": 1,
+  "pitch_x_mm": 59.0,
+  "panel_origin": "top-left outer panel corner",
+  "cad_coordinates": "Millimeters; X right, Y down; stored rotation is KiCad footprint rotation, not calibrated machine rotation",
+  "gerber_coordinates": "Same physical origin; Gerber Y is negative CAD Y; no manual bottom mirroring applied",
+  "units": [
+    {
+      "unit": 1,
+      "reference_prefix": "P1_",
+      "source_translation_mm": [
+        -92.7,
+        -22.3
+      ],
+      "outline_bounding_box_top_left_mm": [
+        7.032340528107056,
+        7.5
+      ],
+      "rotation_deg": 0
+    },
+    {
+      "unit": 2,
+      "reference_prefix": "P2_",
+      "source_translation_mm": [
+        -33.7,
+        -22.3
+      ],
+      "outline_bounding_box_top_left_mm": [
+        66.03234052810706,
+        7.5
+      ],
+      "rotation_deg": 0
+    },
+    {
+      "unit": 3,
+      "reference_prefix": "P3_",
+      "source_translation_mm": [
+        25.299999999999997,
+        -22.3
+      ],
+      "outline_bounding_box_top_left_mm": [
+        125.03234052810706,
+        7.5
+      ],
+      "rotation_deg": 0
+    }
+  ],
+  "existing_board_fiducials": [
+    {
+      "reference": "P2_FID2",
+      "unit": 2,
+      "x_mm": 70.85,
+      "y_mm": 33.25,
+      "side": "top"
+    },
+    {
+      "reference": "P3_FID1",
+      "unit": 3,
+      "x_mm": 150.35,
+      "y_mm": 94.8,
+      "side": "top"
+    },
+    {
+      "reference": "P1_FID3",
+      "unit": 1,
+      "x_mm": 56.7,
+      "y_mm": 9.6,
+      "side": "top"
+    },
+    {
+      "reference": "P1_FID1",
+      "unit": 1,
+      "x_mm": 32.35,
+      "y_mm": 94.8,
+      "side": "top"
+    },
+    {
+      "reference": "P2_FID3",
+      "unit": 2,
+      "x_mm": 115.7,
+      "y_mm": 9.6,
+      "side": "top"
+    },
+    {
+      "reference": "P1_FID2",
+      "unit": 1,
+      "x_mm": 11.85,
+      "y_mm": 33.25,
+      "side": "top"
+    },
+    {
+      "reference": "P2_FID1",
+      "unit": 2,
+      "x_mm": 91.35,
+      "y_mm": 94.8,
+      "side": "top"
+    },
+    {
+      "reference": "P3_FID3",
+      "unit": 3,
+      "x_mm": 174.7,
+      "y_mm": 9.6,
+      "side": "top"
+    },
+    {
+      "reference": "P3_FID2",
+      "unit": 3,
+      "x_mm": 129.85,
+      "y_mm": 33.25,
+      "side": "top"
+    }
+  ],
+  "frame_tooling_holes": false,
+  "frame_fiducials": false,
+  "dnp_references": [],
+  "assembly_choices_pending": [
+    "D1 versus D3 LED footprint",
+    "Populate J1/J9 SWD headers or leave as programming contacts"
+  ],
+  "machine_setup_pending": [
+    "Package/nozzle and feeder assignments",
+    "Camera/board alignment",
+    "Top/bottom orientation mapping",
+    "Per-package rotation and pickup corrections",
+    "Part heights",
+    "Dry run and first-board verification"
+  ],
+  "pcb_sha256": "1ba3f1eba192aa2da1370e5c0c495f9c1e2b3dc39a74d19e7f58900a0ef47578"
+}

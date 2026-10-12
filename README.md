@@ -1,4 +1,25 @@
-# LumenPnP Feeders
+# Feeder REV12CD
+
+Public hardware fork maintained by **crazydart**, derived from [Opulo's feeder repository](https://github.com/opulo-inc/feeder). **REV12CD removes the alternate U2 MCU and keeps U1 (STM32F031C6T6, LQFP-48).** The single board and all three panel copies are labeled REV12CD.
+
+| File | Purpose |
+|---|---|
+| [Single-board KiCad project](pcb/mobo/mobo.kicad_pro) | Editable circuit and PCB |
+| [Three-board KiCad project](pcb/mobo-panel3/feeder-rev12cd-panel3.kicad_pro) | Editable routed panel |
+| [JLCPCB upload ZIP](pcb/mobo-panel3/feeder-rev12cd-panel3-jlcpcb.zip) | PCB, drills and both stencil paste layers together |
+| [PCB order notes](pcb/mobo-panel3/ORDER-NOTES.md) | Settings and short order comment |
+| [Stencil and PnP data](pcb/mobo-panel3/STENCIL-AND-PNP.md) | Stencil settings and saved machine coordinates |
+| [Panel documentation](pcb/mobo-panel3/README.md) | Reproduction steps and validation results |
+
+![REV12CD panel](pcb/mobo-panel3/top-gerber-preview.png)
+
+The panel is 184 × 104 × 1.6 mm, with three boards and six drilled breakaway tabs per board. The top/bottom tabs and four side tabs avoid the connectors and buttons.
+
+Modified 2026-10-11 from upstream commit `05843dd0e7551cbf20dc831514174f446f376858`. Checks found no new electrical DRC errors, unconnected items or single-board schematic/PCB mismatches. Inherited DRC/ERC findings are documented in the [single-board notes](pcb/mobo/README.md) and [panel validation reports](pcb/mobo-panel3/validation). This derivative has not been physically prototyped.
+
+Hardware remains under CERN-OHL-W v2; see [LICENSE](LICENSE). The modified PCBs use crazydart branding. Other upstream designs and documentation remain below.
+
+## Upstream LumenPnP Feeders
 The LumenPnP Feeders are open source pick and place feeders to aid in [Mid-Scale Manufacturing](https://stephenhawes.com/level-2-manufacturing/).
 
 ![LumenPnP Feeders](img/hero-alpha.png)

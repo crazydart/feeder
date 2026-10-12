@@ -1,0 +1,25 @@
+{
+  "revision": "REV12CD",
+  "electrical_master_sha256": "1ba3f1eba192aa2da1370e5c0c495f9c1e2b3dc39a74d19e7f58900a0ef47578",
+  "upload_members": [
+    "feeder-rev12cd-panel3-B_Cu.gbl",
+    "feeder-rev12cd-panel3-B_Mask.gbs",
+    "feeder-rev12cd-panel3-B_Paste.gbp",
+    "feeder-rev12cd-panel3-B_Silkscreen.gbo",
+    "feeder-rev12cd-panel3-Edge_Cuts.gm1",
+    "feeder-rev12cd-panel3-F_Cu.gtl",
+    "feeder-rev12cd-panel3-F_Mask.gts",
+    "feeder-rev12cd-panel3-F_Paste.gtp",
+    "feeder-rev12cd-panel3-F_Silkscreen.gto",
+    "feeder-rev12cd-panel3-NPTH.drl",
+    "feeder-rev12cd-panel3-PTH.drl"
+  ],
+  "paste_in_same_zip": true,
+  "zip_integrity_verified": true,
+  "comment_lengths": {
+    "ORDER-COMMENT.txt": 195,
+    "STENCIL-COMMENT.txt": 158
+  },
+  "bom_groups": 36,
+  "bom_candidate_parts_per_unit": 56
+}

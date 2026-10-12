@@ -1,0 +1,24 @@
+{
+  "source": "REV12CD: U2 and its dangling traces removed from upstream REV12",
+  "units": 3,
+  "footprints": 204,
+  "routing_items": 2526,
+  "pads": 741,
+  "component_positions_pad_geometry_tracks_vias_nets_unchanged": true,
+  "changes": "Panel translations, unique CAD references and net namespaces, copper-pour setbacks at routed edges and tabs, original unit outline with tab routing, 144 NPTH breakaway holes and rail labeling",
+  "mousebite_holes": 144,
+  "unconnected_items": 0,
+  "drc_counts": {
+    "courtyards_overlap": 3,
+    "starved_thermal": 9,
+    "silk_edge_clearance": 9,
+    "lib_footprint_mismatch": 138,
+    "text_height": 96,
+    "silk_overlap": 9,
+    "silk_over_copper": 12
+  },
+  "inherited_errors": {
+    "starved_thermal": 9,
+    "courtyards_overlap": 3
+  }
+}

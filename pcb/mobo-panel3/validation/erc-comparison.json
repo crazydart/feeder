@@ -1,0 +1,26 @@
+{
+  "upstream_error_count": 18,
+  "rev12cd_error_count": 17,
+  "new_electrical_errors": 0,
+  "new_warnings": [
+    {
+      "type": "isolated_pin_label",
+      "items": [
+        "Global Label 'PA0'"
+      ]
+    },
+    {
+      "type": "isolated_pin_label",
+      "items": [
+        "Global Label 'PA1'"
+      ]
+    },
+    {
+      "type": "isolated_pin_label",
+      "items": [
+        "Global Label 'PA3'"
+      ]
+    }
+  ],
+  "note": "Removing U2 leaves PA0/PA1/PA3 labels on their single unused U1 pins. These add three isolated-label warnings without changing remaining net connections."
+}

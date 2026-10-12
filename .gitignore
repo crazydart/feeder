@@ -26,3 +26,9 @@ fp-info-cache
 *.xml
 *.FCStd1
 out/
+__pycache__/
+*.pyc
+*.kicad_prl
+*-backups/
+.history/
+*.gbrjob

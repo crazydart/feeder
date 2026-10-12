@@ -1,0 +1,369 @@
+{
+  "upstream_commit": "05843dd0e7551cbf20dc831514174f446f376858",
+  "removed_footprints": [
+    {
+      "reference": "G***",
+      "footprint": "index:goblin",
+      "uuid": "5c70ff1b-a356-42fc-a524-8346651f8324"
+    },
+    {
+      "reference": "U2",
+      "footprint": "Package_DFN_QFN:QFN-32-1EP_5x5mm_P0.5mm_EP3.45x3.45mm",
+      "uuid": "c1518dae-2aaf-4360-9028-98a626546353"
+    },
+    {
+      "reference": "G***",
+      "footprint": "LOGO",
+      "uuid": "057fdb7d-ed1b-4be7-80ca-95cdf825aed5"
+    },
+    {
+      "reference": "G***",
+      "footprint": "feeder:pulsar",
+      "uuid": "234334d9-0ff9-4833-8d76-9361b6e5acd0"
+    },
+    {
+      "reference": "G***",
+      "footprint": "index:logo_mask",
+      "uuid": "2903337f-719e-4b92-9244-c2c41d2e3eea"
+    },
+    {
+      "reference": "G***",
+      "footprint": "LOGO",
+      "uuid": "3e28f24b-26d3-4998-8211-a51012abfbd2"
+    }
+  ],
+  "schematic_objects_removed": {
+    "global_label": 26,
+    "junction": 2,
+    "no_connect": 2,
+    "wire": 5,
+    "symbol": 3
+  },
+  "removed_dangling_track_segments": [
+    {
+      "uuid": "1247430d-4da2-43a4-8868-4392e5a5ee28",
+      "net": "+3V3",
+      "type": "segment"
+    },
+    {
+      "uuid": "182587cd-46fe-440a-9c42-dbd191399901",
+      "net": "RESET",
+      "type": "segment"
+    },
+    {
+      "uuid": "3779a783-4450-4770-a1c6-a7ebc3dbc350",
+      "net": "OSC_IN",
+      "type": "segment"
+    },
+    {
+      "uuid": "32bc5622-5be4-419a-a99c-7ffd4292b93f",
+      "net": "MCU_RX",
+      "type": "segment"
+    },
+    {
+      "uuid": "7993e3b2-6aeb-455c-9aa5-de348a91e1e6",
+      "net": "MCU_TX",
+      "type": "segment"
+    },
+    {
+      "uuid": "013ac85d-4b67-4ff1-8ebe-4a45e3af2048",
+      "net": "1WIRE",
+      "type": "segment"
+    },
+    {
+      "uuid": "a9c72051-803d-4969-a6dd-fd465a1a87c9",
+      "net": "SWDIO",
+      "type": "segment"
+    },
+    {
+      "uuid": "bb536fdf-6103-43c1-a490-b694f6ad4d8e",
+      "net": "SWCLK",
+      "type": "segment"
+    },
+    {
+      "uuid": "00f63967-06e4-47a4-a985-201c22549b74",
+      "net": "OSC_OUT",
+      "type": "segment"
+    },
+    {
+      "uuid": "1268ef5c-9a5b-466a-8dbb-ea2ddb748c90",
+      "net": "SW1",
+      "type": "segment"
+    },
+    {
+      "uuid": "ae7748ad-ba94-4916-ab60-1696ce282458",
+      "net": "SW2",
+      "type": "segment"
+    },
+    {
+      "uuid": "7caf00fa-33f1-413a-90f7-5396c9e1d0b4",
+      "net": "PEEL1",
+      "type": "segment"
+    },
+    {
+      "uuid": "80dcc5bc-1026-48a5-a0aa-38cb5ac4d7e9",
+      "net": "PEEL2",
+      "type": "segment"
+    },
+    {
+      "uuid": "0e5104aa-5c72-454d-9e03-fcfede699424",
+      "net": "DRIVE2",
+      "type": "segment"
+    },
+    {
+      "uuid": "838d0d31-7406-4be9-a3cf-04a207768586",
+      "net": "DRIVE1",
+      "type": "segment"
+    },
+    {
+      "uuid": "1aabce98-d24e-41f2-bf9c-a1a20cc16548",
+      "net": "BOOT0",
+      "type": "segment"
+    },
+    {
+      "uuid": "7dd6afdc-59fe-403c-be5f-38f951241e16",
+      "net": "DE",
+      "type": "segment"
+    },
+    {
+      "uuid": "35d16365-804a-41a5-ad27-329d0a2c23be",
+      "net": "DRIVE_QUAD_A",
+      "type": "segment"
+    },
+    {
+      "uuid": "96f4aaf2-716b-4301-9534-5b0fcefe1b4e",
+      "net": "DRIVE_QUAD_B",
+      "type": "segment"
+    },
+    {
+      "uuid": "4ea32f1c-4e07-4dae-ac8f-fe74a234afca",
+      "net": "~{RE}",
+      "type": "segment"
+    },
+    {
+      "uuid": "af30c372-2a35-4e65-a847-5c305b1d3ab2",
+      "net": "LED_R",
+      "type": "segment"
+    },
+    {
+      "uuid": "c19e3b74-797e-41bd-bcbf-b062861d3cda",
+      "net": "LED_G",
+      "type": "segment"
+    },
+    {
+      "uuid": "1b950aa7-128b-421a-ae52-17825a2d8257",
+      "net": "LED_B",
+      "type": "segment"
+    },
+    {
+      "uuid": "28e6e0e0-a9c6-4f7d-89de-8bbdeb9122ba",
+      "net": "PA1",
+      "type": "segment"
+    },
+    {
+      "uuid": "54b395e0-882d-41d1-97c0-00ad7b79b624",
+      "net": "PA0",
+      "type": "segment"
+    },
+    {
+      "uuid": "06a2c171-2e44-4448-b73f-5112ab1aeeb2",
+      "net": "MOTOR_ENABLE",
+      "type": "segment"
+    },
+    {
+      "uuid": "0588bf8e-c463-4584-b3a6-692ecac14d12",
+      "net": "PA3",
+      "type": "segment"
+    },
+    {
+      "uuid": "73ab13cf-1f09-4610-9dd7-cd8500ef5ad7",
+      "net": "+3V3",
+      "type": "segment"
+    },
+    {
+      "uuid": "fc75540b-5171-40eb-86d5-71c16715db5d",
+      "net": "MOTOR_ENABLE",
+      "type": "segment"
+    },
+    {
+      "uuid": "20551cf0-9526-4daf-a2f4-3e988d97908c",
+      "net": "LED_B",
+      "type": "segment"
+    },
+    {
+      "uuid": "436b8a18-1501-4421-bec0-76acdfd05f9d",
+      "net": "RESET",
+      "type": "segment"
+    },
+    {
+      "uuid": "65da48a7-6576-4c5f-a269-f51368135c25",
+      "net": "OSC_IN",
+      "type": "segment"
+    },
+    {
+      "uuid": "13323b3a-ac6c-4501-89a7-44b7baea7488",
+      "net": "OSC_OUT",
+      "type": "segment"
+    },
+    {
+      "uuid": "4f31f5f6-977d-464d-b515-6fb866ea8ba9",
+      "net": "PA0",
+      "type": "segment"
+    },
+    {
+      "uuid": "69f3c0b8-6236-4a82-9993-bdc7fec27bd1",
+      "net": "PA1",
+      "type": "segment"
+    },
+    {
+      "uuid": "4023f168-dc8e-41c8-8938-d30c889ec24f",
+      "net": "PA3",
+      "type": "segment"
+    },
+    {
+      "uuid": "60b07b8e-3943-46f2-baf4-01733f9628f4",
+      "net": "LED_G",
+      "type": "segment"
+    },
+    {
+      "uuid": "a8dc84af-80f9-4fad-926b-6732d79412ed",
+      "net": "LED_R",
+      "type": "segment"
+    },
+    {
+      "uuid": "4303a657-d797-4040-b8ae-fbe7628f44d2",
+      "net": "SW1",
+      "type": "segment"
+    },
+    {
+      "uuid": "d73c78f2-355d-4b3a-882d-2ae2a4bb5e8d",
+      "net": "SWCLK",
+      "type": "segment"
+    },
+    {
+      "uuid": "478ee820-69ce-46f9-8983-3baf78dfe840",
+      "net": "+3V3",
+      "type": "segment"
+    },
+    {
+      "uuid": "3db87ddf-3fbd-4c0c-b717-5906fe5516bf",
+      "net": "MOTOR_ENABLE",
+      "type": "segment"
+    },
+    {
+      "uuid": "0ec5f83d-98c2-4bb7-9d3c-8eb8ac6936ad",
+      "net": "LED_B",
+      "type": "segment"
+    },
+    {
+      "uuid": "0d0bbe65-ca9a-4b5f-b45a-d5f461c83157",
+      "net": "PA0",
+      "type": "segment"
+    },
+    {
+      "uuid": "93fc6b62-aafe-424c-8ad6-374120b93534",
+      "net": "PA1",
+      "type": "segment"
+    },
+    {
+      "uuid": "c0aacbfd-08f8-451e-ac05-262d2aa045d2",
+      "net": "PA3",
+      "type": "segment"
+    },
+    {
+      "uuid": "cf67618e-caa0-4180-8c98-4210fc8b7c74",
+      "net": "LED_G",
+      "type": "segment"
+    },
+    {
+      "uuid": "54f754ee-482c-4002-ab9b-6cf54040f07c",
+      "net": "LED_R",
+      "type": "segment"
+    },
+    {
+      "uuid": "085dc215-c8ea-4985-a549-edfa8a0d9f8c",
+      "net": "SW1",
+      "type": "segment"
+    },
+    {
+      "uuid": "4272fe09-65ad-406e-b335-cdad12bee4d3",
+      "net": "SWCLK",
+      "type": "segment"
+    },
+    {
+      "uuid": "5529d42c-549e-455c-b74d-2e26042ea4ab",
+      "net": "LED_B",
+      "type": "segment"
+    },
+    {
+      "uuid": "24386ebd-1004-4374-9dff-9177350b2303",
+      "net": "PA0",
+      "type": "segment"
+    },
+    {
+      "uuid": "b5233fdc-7916-47fd-885f-86b56c0aa8fc",
+      "net": "PA1",
+      "type": "segment"
+    },
+    {
+      "uuid": "4132d9de-8182-4a6d-818d-5e7579e05bd7",
+      "net": "LED_G",
+      "type": "segment"
+    },
+    {
+      "uuid": "8a655240-e1f7-41d8-8867-413b6f6ed0fb",
+      "net": "LED_R",
+      "type": "segment"
+    },
+    {
+      "uuid": "3d4167bc-736c-4d0b-b667-c35a34701864",
+      "net": "SW1",
+      "type": "segment"
+    },
+    {
+      "uuid": "25cc0647-c927-463f-bbfe-3e6275a10e8c",
+      "net": "LED_B",
+      "type": "segment"
+    },
+    {
+      "uuid": "713aca30-49ca-400b-8323-e8fdf59b6e68",
+      "net": "PA1",
+      "type": "segment"
+    },
+    {
+      "uuid": "0f88145e-5b03-4673-aa45-6e82ae762467",
+      "net": "LED_R",
+      "type": "segment"
+    },
+    {
+      "uuid": "3b54dda8-a9b4-4da6-8a31-f7933c761fe9",
+      "net": "LED_R",
+      "type": "segment"
+    },
+    {
+      "uuid": "b91b5bbb-0e8a-4616-b8bf-d59a49aa3000",
+      "net": "LED_R",
+      "type": "segment"
+    }
+  ],
+  "remaining_unconnected_items": 0,
+  "remaining_schematic_components_unchanged": true,
+  "remaining_schematic_pin_net_mapping_unchanged": true,
+  "schematic_net_count": 69,
+  "remaining_pcb_pads_unchanged": true,
+  "remaining_pcb_footprint_locations_unchanged": true,
+  "remaining_tracks_and_vias_unchanged": true,
+  "remaining_footprints": 68,
+  "remaining_pads": 247,
+  "remaining_tracks_and_vias": 842,
+  "schematic_parity_issues": 0,
+  "drc_counts": {
+    "courtyards_overlap": 1,
+    "starved_thermal": 3,
+    "silk_edge_clearance": 3,
+    "lib_footprint_mismatch": 46,
+    "text_height": 32,
+    "silk_overlap": 3,
+    "silk_over_copper": 4
+  }
+}

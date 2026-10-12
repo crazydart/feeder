@@ -1,0 +1,390 @@
+{
+  "panel_mm": [
+    184,
+    104,
+    1.6
+  ],
+  "boards": 3,
+  "tabs_per_board": 6,
+  "holes_per_tab": 8,
+  "mousebite_holes": 144,
+  "hole_diameter_mm": 0.6,
+  "hole_pitch_mm": 1.0,
+  "hole_edge_spacing_mm": 0.4,
+  "minimum_tab_neck_mm": 5.6,
+  "plated_holes": 558,
+  "original_unplated_circular_openings": 39,
+  "router_mm": 2,
+  "no_vcuts": true,
+  "original_board_outline_restored": true,
+  "connected_after_drilling": true,
+  "separation_yields_three_boards_and_frame": true,
+  "minimum_tab_to_connector_or_button_mm": 3.155000000000001,
+  "conservative_gerber_hole_rim_to_copper_mm": {
+    "front": 0.6908703021102175,
+    "back": 0.6908703021102175
+  },
+  "copper_raster_mm_per_pixel": 0.01,
+  "tab_placement_checks": [
+    {
+      "board": 1,
+      "center_mm": [
+        9.599999999999994,
+        39.7
+      ],
+      "nearest_connector_or_button": "J3",
+      "minimum_clearance_mm": 8.75500000000001,
+      "protected_references": [
+        "J9",
+        "J6",
+        "J8",
+        "J3",
+        "J7",
+        "J2",
+        "J5",
+        "J4",
+        "J1"
+      ]
+    },
+    {
+      "board": 1,
+      "center_mm": [
+        58.60000000000001,
+        39.7
+      ],
+      "nearest_connector_or_button": "J1",
+      "minimum_clearance_mm": 11.675000000000011,
+      "protected_references": [
+        "J9",
+        "J6",
+        "J8",
+        "J3",
+        "J7",
+        "J2",
+        "J5",
+        "J4",
+        "J1"
+      ]
+    },
+    {
+      "board": 1,
+      "center_mm": [
+        8.599999999999994,
+        73.7
+      ],
+      "nearest_connector_or_button": "J3",
+      "minimum_clearance_mm": 3.155000000000001,
+      "protected_references": [
+        "J9",
+        "J6",
+        "J8",
+        "J3",
+        "J7",
+        "J2",
+        "J5",
+        "J4",
+        "J1"
+      ]
+    },
+    {
+      "board": 1,
+      "center_mm": [
+        58.60000000000001,
+        73.7
+      ],
+      "nearest_connector_or_button": "J4",
+      "minimum_clearance_mm": 5.36895066714875,
+      "protected_references": [
+        "J9",
+        "J6",
+        "J8",
+        "J3",
+        "J7",
+        "J2",
+        "J5",
+        "J4",
+        "J1"
+      ]
+    },
+    {
+      "board": 1,
+      "center_mm": [
+        47.8,
+        7.5
+      ],
+      "nearest_connector_or_button": "J8",
+      "minimum_clearance_mm": 6.474999999999993,
+      "protected_references": [
+        "J9",
+        "J6",
+        "J8",
+        "J3",
+        "J7",
+        "J2",
+        "J5",
+        "J4",
+        "J1"
+      ]
+    },
+    {
+      "board": 1,
+      "center_mm": [
+        38.3,
+        96.5
+      ],
+      "nearest_connector_or_button": "J6",
+      "minimum_clearance_mm": 3.2024363198293133,
+      "protected_references": [
+        "J9",
+        "J6",
+        "J8",
+        "J3",
+        "J7",
+        "J2",
+        "J5",
+        "J4",
+        "J1"
+      ]
+    },
+    {
+      "board": 2,
+      "center_mm": [
+        68.6,
+        39.7
+      ],
+      "nearest_connector_or_button": "J3",
+      "minimum_clearance_mm": 8.75500000000001,
+      "protected_references": [
+        "J9",
+        "J6",
+        "J8",
+        "J3",
+        "J7",
+        "J2",
+        "J5",
+        "J4",
+        "J1"
+      ]
+    },
+    {
+      "board": 2,
+      "center_mm": [
+        117.60000000000001,
+        39.7
+      ],
+      "nearest_connector_or_button": "J1",
+      "minimum_clearance_mm": 11.675000000000011,
+      "protected_references": [
+        "J9",
+        "J6",
+        "J8",
+        "J3",
+        "J7",
+        "J2",
+        "J5",
+        "J4",
+        "J1"
+      ]
+    },
+    {
+      "board": 2,
+      "center_mm": [
+        67.6,
+        73.7
+      ],
+      "nearest_connector_or_button": "J3",
+      "minimum_clearance_mm": 3.155000000000001,
+      "protected_references": [
+        "J9",
+        "J6",
+        "J8",
+        "J3",
+        "J7",
+        "J2",
+        "J5",
+        "J4",
+        "J1"
+      ]
+    },
+    {
+      "board": 2,
+      "center_mm": [
+        117.60000000000001,
+        73.7
+      ],
+      "nearest_connector_or_button": "J4",
+      "minimum_clearance_mm": 5.36895066714875,
+      "protected_references": [
+        "J9",
+        "J6",
+        "J8",
+        "J3",
+        "J7",
+        "J2",
+        "J5",
+        "J4",
+        "J1"
+      ]
+    },
+    {
+      "board": 2,
+      "center_mm": [
+        106.8,
+        7.5
+      ],
+      "nearest_connector_or_button": "J8",
+      "minimum_clearance_mm": 6.474999999999993,
+      "protected_references": [
+        "J9",
+        "J6",
+        "J8",
+        "J3",
+        "J7",
+        "J2",
+        "J5",
+        "J4",
+        "J1"
+      ]
+    },
+    {
+      "board": 2,
+      "center_mm": [
+        97.3,
+        96.5
+      ],
+      "nearest_connector_or_button": "J6",
+      "minimum_clearance_mm": 3.2024363198293133,
+      "protected_references": [
+        "J9",
+        "J6",
+        "J8",
+        "J3",
+        "J7",
+        "J2",
+        "J5",
+        "J4",
+        "J1"
+      ]
+    },
+    {
+      "board": 3,
+      "center_mm": [
+        127.6,
+        39.7
+      ],
+      "nearest_connector_or_button": "J3",
+      "minimum_clearance_mm": 8.75500000000001,
+      "protected_references": [
+        "J9",
+        "J6",
+        "J8",
+        "J3",
+        "J7",
+        "J2",
+        "J5",
+        "J4",
+        "J1"
+      ]
+    },
+    {
+      "board": 3,
+      "center_mm": [
+        176.60000000000002,
+        39.7
+      ],
+      "nearest_connector_or_button": "J1",
+      "minimum_clearance_mm": 11.675000000000011,
+      "protected_references": [
+        "J9",
+        "J6",
+        "J8",
+        "J3",
+        "J7",
+        "J2",
+        "J5",
+        "J4",
+        "J1"
+      ]
+    },
+    {
+      "board": 3,
+      "center_mm": [
+        126.6,
+        73.7
+      ],
+      "nearest_connector_or_button": "J3",
+      "minimum_clearance_mm": 3.155000000000001,
+      "protected_references": [
+        "J9",
+        "J6",
+        "J8",
+        "J3",
+        "J7",
+        "J2",
+        "J5",
+        "J4",
+        "J1"
+      ]
+    },
+    {
+      "board": 3,
+      "center_mm": [
+        176.60000000000002,
+        73.7
+      ],
+      "nearest_connector_or_button": "J4",
+      "minimum_clearance_mm": 5.36895066714875,
+      "protected_references": [
+        "J9",
+        "J6",
+        "J8",
+        "J3",
+        "J7",
+        "J2",
+        "J5",
+        "J4",
+        "J1"
+      ]
+    },
+    {
+      "board": 3,
+      "center_mm": [
+        165.8,
+        7.5
+      ],
+      "nearest_connector_or_button": "J8",
+      "minimum_clearance_mm": 6.474999999999993,
+      "protected_references": [
+        "J9",
+        "J6",
+        "J8",
+        "J3",
+        "J7",
+        "J2",
+        "J5",
+        "J4",
+        "J1"
+      ]
+    },
+    {
+      "board": 3,
+      "center_mm": [
+        156.3,
+        96.5
+      ],
+      "nearest_connector_or_button": "J6",
+      "minimum_clearance_mm": 3.2024363198293133,
+      "protected_references": [
+        "J9",
+        "J6",
+        "J8",
+        "J3",
+        "J7",
+        "J2",
+        "J5",
+        "J4",
+        "J1"
+      ]
+    }
+  ]
+}

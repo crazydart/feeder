@@ -1,0 +1,35 @@
+{
+  "panel_mm": [
+    184,
+    104,
+    1.6
+  ],
+  "alignment": "1:1 panel coordinates shared with copper, mask and drill files",
+  "included_in_pcb_upload_zip": true,
+  "front_file": "feeder-rev12cd-panel3-F_Paste.gtp",
+  "back_file": "feeder-rev12cd-panel3-B_Paste.gbp",
+  "omitted_dnp": [],
+  "front_paste_pad_count": 654,
+  "back_paste_pad_count": 30,
+  "preserved_optional_footprints": [
+    "D1",
+    "D3",
+    "J1",
+    "J9"
+  ],
+  "recommended_manual_stencil": {
+    "side": "Top",
+    "type": "Frameless",
+    "thickness_mm": 0.1,
+    "custom_sheet_mm": [
+      244,
+      164
+    ],
+    "panel_margin_each_side_mm": 30,
+    "model_example": "380 x 280 mm model with 290 x 190 mm valid area",
+    "fiducials": "None",
+    "quantity": 1
+  },
+  "bottom_note": "Bottom paste is only the three J1 programming headers, 30 apertures total. Order Bottom separately only if needed.",
+  "aperture_policy": "Use supplied paste layers; do not recreate apertures from solder mask. Retain original pad aperture geometry; no production-file confirmation requested."
+}

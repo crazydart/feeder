@@ -1,0 +1,4 @@
+(fp_lib_table
+  (lib (name "feeder")(type "KiCad")(uri "${KIPRJMOD}/../../lib/kicad/feeder.pretty")(options "")(descr "Feeder project footprints"))
+  (lib (name "index")(type "KiCad")(uri "${KIPRJMOD}/../../lib/kicad/index.pretty")(options "")(descr "Legacy LED footprint retained from REV12"))
+)
