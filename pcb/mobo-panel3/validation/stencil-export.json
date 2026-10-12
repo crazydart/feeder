@@ -5,7 +5,7 @@
     "back": 30
   },
   "placement_candidates": 165,
-  "electrical_master_sha256": "1ba3f1eba192aa2da1370e5c0c495f9c1e2b3dc39a74d19e7f58900a0ef47578",
+  "electrical_master_sha256": "8522925a73aeda9c3bafd0c573b0a41266dfa8e26587d4b6609c67d629d0863a",
   "paste_exported_from_electrical_master": true,
   "u2_absent_from_pcb": true,
   "exported_objects": {

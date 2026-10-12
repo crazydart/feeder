@@ -6,6 +6,7 @@ import uuid
 from pathlib import Path
 import pcbnew as k
 import wx
+from sexpr import parse, ch, one
 
 app = wx.App(False)
 root = Path(__file__).resolve().parents[1]
@@ -70,6 +71,54 @@ for i, offset in enumerate(geo["offsets_mm"], 1):
             assert tuple(v.GetDrillSize()) == tuple(p.GetDrillSize())
             assert v.GetOrientationDegrees() == p.GetOrientationDegrees()
             pad_count += 1
+
+# Check the actual KiCad graphics after serialization/refill. This catches
+# missing artwork, incorrectly mirrored back text and changed serial boxes.
+drawings = {d.m_Uuid.AsString(): d for d in panel.GetDrawings()}
+source_data = parse((root.parent / "mobo/mobo.kicad_pcb").read_text())
+panel_data = parse((root / "feeder-rev12cd-panel3.kicad_pcb").read_text())
+source_group = next(g for g in ch(source_data, "group") if g[1] == "AI Herding Cats logo")
+groups = {str(one(g, "uuid")[1]): g for g in ch(panel_data, "group")}
+artwork_counts = collections.Counter()
+for i, offset in enumerate(geo["offsets_mm"], 1):
+    prefix = f"P{i}"
+    for d in src.GetDrawings():
+        if d.GetLayer() not in (k.F_SilkS, k.B_SilkS):
+            continue
+        q = drawings[new_id(d, prefix)]
+        assert q.GetLayer() == d.GetLayer()
+        if isinstance(d, k.PCB_TEXT):
+            assert isinstance(q, k.PCB_TEXT)
+            assert q.GetText() == d.GetText()
+            assert tuple(q.GetPosition()) == translated(d.GetPosition(), offset)
+            assert q.GetTextAngle().AsDegrees() == d.GetTextAngle().AsDegrees()
+            assert q.IsMirrored() == d.IsMirrored()
+            assert tuple(q.GetTextSize()) == tuple(d.GetTextSize())
+            assert q.GetTextThickness() == d.GetTextThickness()
+            assert q.IsBold() == d.IsBold() and q.IsItalic() == d.IsItalic()
+            artwork_counts["text_items"] += 1
+        elif d.GetShape() == k.SHAPE_T_POLY:
+            assert q.GetShape() == d.GetShape() and q.GetWidth() == d.GetWidth()
+            a, b = d.GetPolyShape(), q.GetPolyShape()
+            assert a.OutlineCount() == b.OutlineCount()
+            for j in range(a.OutlineCount()):
+                x, y = a.COutline(j), b.COutline(j)
+                assert x.PointCount() == y.PointCount()
+                for z in range(x.PointCount()):
+                    assert tuple(y.CPoint(z)) == translated(x.CPoint(z), offset)
+            artwork_counts["logo_polygons"] += 1
+        elif d.GetShape() == k.SHAPE_T_RECT:
+            assert q.GetShape() == d.GetShape() and q.GetWidth() == d.GetWidth()
+            assert tuple(q.GetStart()) == translated(d.GetStart(), offset)
+            assert tuple(q.GetEnd()) == translated(d.GetEnd(), offset)
+            artwork_counts["serial_boxes"] += 1
+    expected_group_id = str(uuid.uuid5(ns, prefix + str(one(source_group, "uuid")[1])))
+    g = groups[expected_group_id]
+    assert g[1] == prefix + " / AI Herding Cats logo"
+    assert set(one(g, "members")[1:]) == {
+        str(uuid.uuid5(ns, prefix + str(member))) for member in one(source_group, "members")[1:]
+    }
+assert artwork_counts["logo_polygons"] == 21 and artwork_counts["serial_boxes"] == 3
 drc = json.loads((order / "validation/drc.json").read_text())
 counts = collections.Counter(v["type"] for v in drc["violations"])
 assert not drc["unconnected_items"]
@@ -80,6 +129,8 @@ for issue in ("shorting_items", "clearance", "hole_clearance", "solder_mask_brid
 report = dict(source="REV12CD: U2 and its dangling traces removed from upstream REV12",
               units=3, footprints=len(footprints), routing_items=len(tracks), pads=pad_count,
               component_positions_pad_geometry_tracks_vias_nets_unchanged=True,
+              silkscreen_text_logo_and_serial_boxes_match_source=True,
+              artwork_counts=dict(artwork_counts), editable_logo_groups=3,
               changes="Panel translations, unique CAD references and net namespaces, copper-pour setbacks at routed edges and tabs, original unit outline with tab routing, 144 NPTH breakaway holes and rail labeling",
               mousebite_holes=144, unconnected_items=0, drc_counts=dict(counts),
               inherited_errors={"starved_thermal":9,"courtyards_overlap":3})

@@ -1,7 +1,7 @@
 {
   "$schema": "https://schemas.kicad.org/drc.v1.json",
   "coordinate_units": "mm",
-  "date": "2026-10-11T23:06:46",
+  "date": "2026-10-11T23:59:32",
   "ignored_checks": [
     {
       "description": "Footprint has no courtyard defined",
@@ -1398,9 +1398,9 @@
           "description": "Segment of J2 on F.Silkscreen",
           "pos": {
             "x": 119.935,
-            "y": 66.79
+            "y": 67.24
           },
-          "uuid": "3395e230-1d35-4beb-844d-a586d1296190"
+          "uuid": "0a909fb0-ce42-4387-8bc3-c495ec6b42b7"
         },
         {
           "description": "Segment on F.Silkscreen",
@@ -1421,9 +1421,9 @@
           "description": "Segment of J2 on F.Silkscreen",
           "pos": {
             "x": 119.935,
-            "y": 67.24
+            "y": 66.79
           },
-          "uuid": "0a909fb0-ce42-4387-8bc3-c495ec6b42b7"
+          "uuid": "3395e230-1d35-4beb-844d-a586d1296190"
         },
         {
           "description": "Segment on F.Silkscreen",
@@ -1436,52 +1436,6 @@
       ],
       "severity": "warning",
       "type": "silk_overlap"
-    },
-    {
-      "description": "Silkscreen clipped by solder mask",
-      "items": [
-        {
-          "description": "Arc of D1 on F.Silkscreen",
-          "pos": {
-            "x": 130.85,
-            "y": 112.2
-          },
-          "uuid": "49b7a93b-0c45-4f54-82d8-c73fca8e9a2f"
-        },
-        {
-          "description": "Pad 1 [+3V3] of D1 on F.Cu",
-          "pos": {
-            "x": 129.45,
-            "y": 111.9
-          },
-          "uuid": "71f45c2f-5652-4523-91a4-46e6ec57813f"
-        }
-      ],
-      "severity": "warning",
-      "type": "silk_over_copper"
-    },
-    {
-      "description": "Silkscreen clipped by solder mask",
-      "items": [
-        {
-          "description": "Arc of D1 on F.Silkscreen",
-          "pos": {
-            "x": 130.85,
-            "y": 112.2
-          },
-          "uuid": "49b7a93b-0c45-4f54-82d8-c73fca8e9a2f"
-        },
-        {
-          "description": "Pad 4 [Net-(D1-A)] of D1 on F.Cu",
-          "pos": {
-            "x": 132.25,
-            "y": 111.9
-          },
-          "uuid": "30a40474-2fc4-4469-914c-d22c8e837fb0"
-        }
-      ],
-      "severity": "warning",
-      "type": "silk_over_copper"
     },
     {
       "description": "Silkscreen clipped by solder mask",
@@ -1524,6 +1478,52 @@
             "y": 43.6375
           },
           "uuid": "b84e4806-604c-440d-b1bb-269131940738"
+        }
+      ],
+      "severity": "warning",
+      "type": "silk_over_copper"
+    },
+    {
+      "description": "Silkscreen clipped by solder mask",
+      "items": [
+        {
+          "description": "Arc of D1 on F.Silkscreen",
+          "pos": {
+            "x": 130.85,
+            "y": 112.2
+          },
+          "uuid": "49b7a93b-0c45-4f54-82d8-c73fca8e9a2f"
+        },
+        {
+          "description": "Pad 1 [+3V3] of D1 on F.Cu",
+          "pos": {
+            "x": 129.45,
+            "y": 111.9
+          },
+          "uuid": "71f45c2f-5652-4523-91a4-46e6ec57813f"
+        }
+      ],
+      "severity": "warning",
+      "type": "silk_over_copper"
+    },
+    {
+      "description": "Silkscreen clipped by solder mask",
+      "items": [
+        {
+          "description": "Arc of D1 on F.Silkscreen",
+          "pos": {
+            "x": 130.85,
+            "y": 112.2
+          },
+          "uuid": "49b7a93b-0c45-4f54-82d8-c73fca8e9a2f"
+        },
+        {
+          "description": "Pad 4 [Net-(D1-A)] of D1 on F.Cu",
+          "pos": {
+            "x": 132.25,
+            "y": 111.9
+          },
+          "uuid": "30a40474-2fc4-4469-914c-d22c8e837fb0"
         }
       ],
       "severity": "warning",

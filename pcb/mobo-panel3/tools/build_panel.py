@@ -62,6 +62,8 @@ def namespace(n, label):
     if isinstance(n,list):
         if n and n[0] == "uuid":
             n[1] = uid(label+str(n[1]))
+        elif n and n[0] == "members":
+            n[1:] = [uid(label+str(member)) for member in n[1:]]
         elif n and n[0] == "net" and len(n) == 2 and n[1]:
             n[1] = label+"/"+str(n[1])
         for item in n:
@@ -110,7 +112,7 @@ def main():
     one(one(setup,"stackup"),"copper_finish")[1]="ENIG"
     one(one(setup,"pcbplotparams"),"outputdirectory")[1]=""
     out.append(parse('(title_block (title "Feeder REV12CD - three-board routed panel") (rev "REV12CD") (comment 1 "184 x 104 x 1.6 mm; 18 tabs, 144 x 0.6 mm NPTH") (comment 2 "Side tabs plus top and bottom tabs at requested positions; original unit outline"))'))
-    items={"footprint","segment","via","gr_line","gr_arc","gr_circle","gr_rect","gr_text","gr_poly","zone"}
+    items={"footprint","segment","via","gr_line","gr_arc","gr_circle","gr_rect","gr_text","gr_poly","zone","group"}
     unit_items=[]
     for index,(dx,dy) in enumerate(OFFSETS,1):
         label=f"P{index}"
@@ -132,6 +134,8 @@ def main():
                     n.append(text)
                     ref.append([A("hide"),A("yes")])
                 ref[2]=label+"_"+old_ref
+            elif n[0]=="group":
+                n[1]=label+" / "+str(n[1])
             elif n[0]=="zone":
                 # Limit pours to the original unit silhouette when the frame is refilled.
                 # Keep poured copper 0.2 mm off routed edges and 1 mm back at tabs.

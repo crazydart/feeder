@@ -11,7 +11,7 @@ Public hardware fork maintained by **crazydart**, derived from [Opulo's feeder r
 | [Stencil and PnP data](pcb/mobo-panel3/STENCIL-AND-PNP.md) | Stencil settings and saved machine coordinates |
 | [Panel documentation](pcb/mobo-panel3/README.md) | Reproduction steps and validation results |
 
-![REV12CD panel](pcb/mobo-panel3/top-gerber-preview.png)
+![REV12CD panel back in installed orientation](pcb/mobo-panel3/back-installed-preview.png)
 
 The panel is 184 × 104 × 1.6 mm, with three boards and six drilled breakaway tabs per board. The top/bottom tabs and four side tabs avoid the connectors and buttons.
 

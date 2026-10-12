@@ -14,4 +14,4 @@ The single-board PCB contains the logo as seven filled `B.SilkS` polygons, group
 - **Original design: Opulo / Open-source hardware** is a two-line credit centered at **(113.4, 58.5) mm**, 1 mm lettering.
 - All added back text is mirrored and rotated 180°. The original open-hardware mark remains intact.
 
-Move the named group to reposition the logo and caption together. Retain the SVG as the editable artwork source. The panel and manufacturing ZIP have not yet been regenerated with this draft artwork.
+Move the named group to reposition the logo and caption together. Retain the SVG as the editable artwork source. The regenerated three-board panel and manufacturing ZIP include this artwork; each panel copy retains its own editable logo group.

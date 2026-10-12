@@ -1,6 +1,6 @@
 {
   "revision": "REV12CD",
-  "electrical_master_sha256": "1ba3f1eba192aa2da1370e5c0c495f9c1e2b3dc39a74d19e7f58900a0ef47578",
+  "electrical_master_sha256": "8522925a73aeda9c3bafd0c573b0a41266dfa8e26587d4b6609c67d629d0863a",
   "upload_members": [
     "feeder-rev12cd-panel3-B_Cu.gbl",
     "feeder-rev12cd-panel3-B_Mask.gbs",

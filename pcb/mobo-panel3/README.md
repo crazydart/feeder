@@ -2,7 +2,9 @@
 
 Open **[feeder-rev12cd-panel3.kicad_pro](feeder-rev12cd-panel3.kicad_pro)** in KiCad 10, then open its PCB. This is a real editable KiCad panel with three copies of the [single-board REV12CD source](../mobo/mobo.kicad_pro). U2 is removed from every copy. Each board's silkscreen reads **REV12CD**.
 
-![Panel front](top-gerber-preview.png)
+![Panel back in installed orientation](back-installed-preview.png)
+
+All three copies include the AI Herding Cats vector logo, website, repository URL, 20 × 6 mm serial-number box and **Original design: Opulo / Open-source hardware** credit. Back artwork reads upright in the installed feeder. Each logo and caption remains an editable KiCad group. [Panel front](top-gerber-preview.png).
 
 The panel is **184 × 104 × 1.6 mm**, three columns at **59 mm pitch**, with six drilled tabs per board. The four side tabs and requested top/bottom tabs are retained. It uses 18 tabs, 144 × 0.6 mm NPTH holes at 1 mm pitch, and 2 mm routed channels. There are no V-cuts. [Annotated tab placement](tab-placement-preview.png).
 
@@ -36,8 +38,8 @@ The scripts assert expected board counts, footprint/pad correspondence, clearanc
 
 ## Validation result
 
-The panel has 204 non-tab footprints, 741 original pads and 2,526 tracks/vias matching three translated unit boards. The 144 additional pads are exclusively NPTH breakaway holes. Minimum tab-to-connector/button footprint clearance is **3.15 mm**; a raster check of exported copper gives a conservative **0.69 mm** minimum clearance from the tab-hole rims. Separating all perforation rows yields exactly three boards and the frame.
+The panel has 204 non-tab footprints, 741 original pads and 2,526 tracks/vias matching three translated unit boards. Silkscreen checks verify all copied text, all 21 logo polygons, three serial-number boxes and three editable logo groups against the single board. The 144 additional pads are exclusively NPTH breakaway holes. Minimum tab-to-connector/button footprint clearance is **3.15 mm**; a raster check of exported copper gives a conservative **0.69 mm** minimum clearance from the tab-hole rims. Separating all perforation rows yields exactly three boards and the frame.
 
 No shorts, electrical clearance errors, dangling tracks or unconnected items were found. The panel retains nine source thermal-relief findings, three TP3/J3 courtyard overlaps and 264 library/silkscreen warnings. The separate unit schematic retains upstream ERC findings documented in [../mobo/README.md](../mobo/README.md). This panel has not been physically prototyped.
 
-Modified 2026-10-11 by crazydart; derived from Opulo REV12. Hardware attribution and CERN-OHL-W v2 licensing remain in [LICENSE](../../LICENSE). The modified boards use the derivative's own silkscreen branding.
+Artwork panel regenerated 2026-10-12 from single-board commit `5a49448`. Modified by crazydart; derived from Opulo REV12. Hardware attribution and CERN-OHL-W v2 licensing remain in [LICENSE](../../LICENSE). The modified boards use AI Herding Cats branding and credit the original Opulo design.

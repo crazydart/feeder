@@ -12,7 +12,7 @@ The single-board artwork places the **AI Herding Cats** robot-and-cat logo and n
 
 Open [../mobo-panel3/feeder-rev12cd-panel3.kicad_pro](../mobo-panel3/feeder-rev12cd-panel3.kicad_pro) for the editable panel. The panel is generated from this single-board master and contains three electrically separate copies with unique CAD references.
 
-**The panel and its fabrication ZIP still contain the earlier artwork.** They have deliberately not been regenerated during the single-board back-artwork draft. Their manifest records the previously released source, so its single-board source hashes will differ until the artwork is finalized and the panel is regenerated.
+**The panel and fabrication ZIP include the finished artwork on all three copies.** The panel manifest records checksums of this source, the original vector logo, assembly data and manufacturing files.
 
 See the [panel README](../mobo-panel3/README.md), [ordering instructions](../mobo-panel3/ORDER-NOTES.md), and [stencil/PnP handoff](../mobo-panel3/STENCIL-AND-PNP.md). The current [BOM](bom/rev12cd-bom.csv) includes population notes. D1/D3 and the optional programming headers still require a final assembly choice; U2 is absent.
 

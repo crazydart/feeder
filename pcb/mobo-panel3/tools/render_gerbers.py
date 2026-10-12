@@ -66,6 +66,9 @@ for side in ("top", "bottom"):
         image = image.transpose(Image.Transpose.FLIP_LEFT_RIGHT)
     image.save(root / f"{side}-gerber-preview.png")
     views.append(image)
+# Display-only orientation for the assembled feeder; fabrication coordinates
+# and the CAD-oriented images used by the tab/stencil overlays remain intact.
+views[1].transpose(Image.Transpose.ROTATE_180).save(root / "back-installed-preview.png")
 margin = 36
 canvas = Image.new("RGB", (2*size[0]+3*margin, size[1]+100), "#f0f2f4")
 draw = ImageDraw.Draw(canvas)

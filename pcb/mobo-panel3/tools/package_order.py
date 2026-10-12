@@ -77,6 +77,8 @@ files = {
 for name in (
     "../mobo/mobo.kicad_pcb", "../mobo/mobo.kicad_sch", "../mobo/mobo.kicad_pro",
     "../mobo/README.md", "../mobo/bom/rev12cd-bom.csv",
+    "../mobo/artwork/README.md", "../mobo/artwork/robot-cat-white.svg",
+    "../mobo/back-silkscreen-preview.png", "../mobo/front-silkscreen-preview.png",
     "../../lib/kicad/index.pretty/MHS110FRGBCT.kicad_mod",
 ):
     files[name] = sha(ROOT / name)

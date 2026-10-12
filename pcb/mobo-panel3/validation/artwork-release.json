@@ -1,0 +1,10 @@
+{
+  "single_board_artwork_commit": "5a4944804dc1004e4ddca62489cad783189693db",
+  "release_date": "2026-10-12",
+  "changed_fabrication_layers": [
+    "F.SilkS",
+    "B.SilkS"
+  ],
+  "copper_mask_paste_drill_outline_bodies_unchanged_excluding_timestamps": true,
+  "panel_geometry_unchanged": true
+}

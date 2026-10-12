@@ -5,6 +5,13 @@
   "routing_items": 2526,
   "pads": 741,
   "component_positions_pad_geometry_tracks_vias_nets_unchanged": true,
+  "silkscreen_text_logo_and_serial_boxes_match_source": true,
+  "artwork_counts": {
+    "text_items": 30,
+    "serial_boxes": 3,
+    "logo_polygons": 21
+  },
+  "editable_logo_groups": 3,
   "changes": "Panel translations, unique CAD references and net namespaces, copper-pour setbacks at routed edges and tabs, original unit outline with tab routing, 144 NPTH breakaway holes and rail labeling",
   "mousebite_holes": 144,
   "unconnected_items": 0,

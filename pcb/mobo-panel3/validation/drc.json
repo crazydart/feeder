@@ -1,7 +1,7 @@
 {
   "$schema": "https://schemas.kicad.org/drc.v1.json",
   "coordinate_units": "mm",
-  "date": "2026-10-11T23:06:54",
+  "date": "2026-10-12T00:00:15",
   "ignored_checks": [
     {
       "description": "Footprint has no courtyard defined",
@@ -110,29 +110,6 @@
       "description": "Thermal relief connection to zone incomplete (layer F.Cu; zone min spoke count 2; actual 1)",
       "items": [
         {
-          "description": "Zone [P1/GND] on F.Cu, priority 0",
-          "pos": {
-            "x": 7.331718,
-            "y": 17.707875
-          },
-          "uuid": "9c45d4bd-f5e7-5aaa-8a36-103ebc63300d"
-        },
-        {
-          "description": "Pad 4 [P1/GND] of P1_U7 on F.Cu",
-          "pos": {
-            "x": 17.65,
-            "y": 60.25
-          },
-          "uuid": "ff8d4bd7-b497-5a2f-b46f-79e9f357e313"
-        }
-      ],
-      "severity": "error",
-      "type": "starved_thermal"
-    },
-    {
-      "description": "Thermal relief connection to zone incomplete (layer F.Cu; zone min spoke count 2; actual 1)",
-      "items": [
-        {
           "description": "Zone [P2/GND] on F.Cu, priority 0",
           "pos": {
             "x": 66.331718,
@@ -187,35 +164,12 @@
           "uuid": "9c45d4bd-f5e7-5aaa-8a36-103ebc63300d"
         },
         {
-          "description": "Pad 1 [P1/GND] of P1_C3 on F.Cu",
+          "description": "Pad 4 [P1/GND] of P1_U7 on F.Cu",
           "pos": {
-            "x": 32.05,
-            "y": 51.3
+            "x": 17.65,
+            "y": 60.25
           },
-          "uuid": "4b2ffd3d-b1a3-5a20-9c71-203572904ff1"
-        }
-      ],
-      "severity": "error",
-      "type": "starved_thermal"
-    },
-    {
-      "description": "Thermal relief connection to zone incomplete (layer F.Cu; zone min spoke count 2; actual 1)",
-      "items": [
-        {
-          "description": "Zone [P3/GND] on F.Cu, priority 0",
-          "pos": {
-            "x": 125.331718,
-            "y": 17.707875
-          },
-          "uuid": "9188d686-c5fd-5a04-b45c-cfc3f3bbf60c"
-        },
-        {
-          "description": "Pad 1 [P3/GND] of P3_C3 on F.Cu",
-          "pos": {
-            "x": 150.05,
-            "y": 51.3
-          },
-          "uuid": "de2a6c12-45bf-5ba2-8b09-1275004d6c95"
+          "uuid": "ff8d4bd7-b497-5a2f-b46f-79e9f357e313"
         }
       ],
       "severity": "error",
@@ -248,6 +202,29 @@
       "description": "Thermal relief connection to zone incomplete (layer F.Cu; zone min spoke count 2; actual 1)",
       "items": [
         {
+          "description": "Zone [P3/GND] on F.Cu, priority 0",
+          "pos": {
+            "x": 125.331718,
+            "y": 17.707875
+          },
+          "uuid": "9188d686-c5fd-5a04-b45c-cfc3f3bbf60c"
+        },
+        {
+          "description": "Pad 1 [P3/GND] of P3_C3 on F.Cu",
+          "pos": {
+            "x": 150.05,
+            "y": 51.3
+          },
+          "uuid": "de2a6c12-45bf-5ba2-8b09-1275004d6c95"
+        }
+      ],
+      "severity": "error",
+      "type": "starved_thermal"
+    },
+    {
+      "description": "Thermal relief connection to zone incomplete (layer F.Cu; zone min spoke count 2; actual 1)",
+      "items": [
+        {
           "description": "Zone [P1/GND] on F.Cu, priority 0",
           "pos": {
             "x": 7.331718,
@@ -256,12 +233,35 @@
           "uuid": "9c45d4bd-f5e7-5aaa-8a36-103ebc63300d"
         },
         {
-          "description": "Pad 4 [P1/GND] of P1_U8 on F.Cu",
+          "description": "Pad 1 [P1/GND] of P1_C3 on F.Cu",
           "pos": {
-            "x": 24.25,
+            "x": 32.05,
+            "y": 51.3
+          },
+          "uuid": "4b2ffd3d-b1a3-5a20-9c71-203572904ff1"
+        }
+      ],
+      "severity": "error",
+      "type": "starved_thermal"
+    },
+    {
+      "description": "Thermal relief connection to zone incomplete (layer F.Cu; zone min spoke count 2; actual 1)",
+      "items": [
+        {
+          "description": "Zone [P2/GND] on F.Cu, priority 0",
+          "pos": {
+            "x": 66.331718,
+            "y": 17.707875
+          },
+          "uuid": "b042d55f-d668-5c81-9963-0c04f6a0f937"
+        },
+        {
+          "description": "Pad 4 [P2/GND] of P2_U8 on F.Cu",
+          "pos": {
+            "x": 83.25,
             "y": 52.35
           },
-          "uuid": "bb3ddc06-73a9-5736-b129-929138092dca"
+          "uuid": "a260dac3-bbec-5f08-9c5e-eb48ccceedf7"
         }
       ],
       "severity": "error",
@@ -294,20 +294,20 @@
       "description": "Thermal relief connection to zone incomplete (layer F.Cu; zone min spoke count 2; actual 1)",
       "items": [
         {
-          "description": "Zone [P2/GND] on F.Cu, priority 0",
+          "description": "Zone [P1/GND] on F.Cu, priority 0",
           "pos": {
-            "x": 66.331718,
+            "x": 7.331718,
             "y": 17.707875
           },
-          "uuid": "b042d55f-d668-5c81-9963-0c04f6a0f937"
+          "uuid": "9c45d4bd-f5e7-5aaa-8a36-103ebc63300d"
         },
         {
-          "description": "Pad 4 [P2/GND] of P2_U8 on F.Cu",
+          "description": "Pad 4 [P1/GND] of P1_U8 on F.Cu",
           "pos": {
-            "x": 83.25,
+            "x": 24.25,
             "y": 52.35
           },
-          "uuid": "a260dac3-bbec-5f08-9c5e-eb48ccceedf7"
+          "uuid": "bb3ddc06-73a9-5736-b129-929138092dca"
         }
       ],
       "severity": "error",
@@ -4105,29 +4105,6 @@
         {
           "description": "Segment of P2_J2 on F.Silkscreen",
           "pos": {
-            "x": 81.765,
-            "y": 44.49
-          },
-          "uuid": "b3378bf9-7207-5add-ac97-291ebc4628a6"
-        },
-        {
-          "description": "Segment on F.Silkscreen",
-          "pos": {
-            "x": 79.6,
-            "y": 44.5
-          },
-          "uuid": "eba308ee-c4cf-5568-90b4-bb1cb9a567bb"
-        }
-      ],
-      "severity": "warning",
-      "type": "silk_overlap"
-    },
-    {
-      "description": "Silkscreen clearance",
-      "items": [
-        {
-          "description": "Segment of P2_J2 on F.Silkscreen",
-          "pos": {
             "x": 86.235,
             "y": 44.49
           },
@@ -4163,6 +4140,29 @@
             "y": 44.94
           },
           "uuid": "f59a8d57-06ad-5cc5-a451-b1408ca51c76"
+        }
+      ],
+      "severity": "warning",
+      "type": "silk_overlap"
+    },
+    {
+      "description": "Silkscreen clearance",
+      "items": [
+        {
+          "description": "Segment of P2_J2 on F.Silkscreen",
+          "pos": {
+            "x": 81.765,
+            "y": 44.49
+          },
+          "uuid": "b3378bf9-7207-5add-ac97-291ebc4628a6"
+        },
+        {
+          "description": "Segment on F.Silkscreen",
+          "pos": {
+            "x": 79.6,
+            "y": 44.5
+          },
+          "uuid": "eba308ee-c4cf-5568-90b4-bb1cb9a567bb"
         }
       ],
       "severity": "warning",
@@ -4241,75 +4241,6 @@
       "description": "Silkscreen clipped by solder mask",
       "items": [
         {
-          "description": "Segment on F.Silkscreen",
-          "pos": {
-            "x": 105.6,
-            "y": 30.5
-          },
-          "uuid": "c411d581-76c6-5038-be97-7d4d5a92151c"
-        },
-        {
-          "description": "Pad 1 [P2/+10V] of P2_C16 on F.Cu",
-          "pos": {
-            "x": 101.8,
-            "y": 29.1875
-          },
-          "uuid": "af6fb626-c8e9-5d25-9a33-de13f309b57f"
-        }
-      ],
-      "severity": "warning",
-      "type": "silk_over_copper"
-    },
-    {
-      "description": "Silkscreen clipped by solder mask",
-      "items": [
-        {
-          "description": "Segment on F.Silkscreen",
-          "pos": {
-            "x": 164.6,
-            "y": 30.5
-          },
-          "uuid": "962a4f11-65ea-50d7-b8e7-118bbb063477"
-        },
-        {
-          "description": "Pad 1 [P3/+10V] of P3_C16 on F.Cu",
-          "pos": {
-            "x": 160.8,
-            "y": 29.1875
-          },
-          "uuid": "66a61c4b-306e-5eed-b97e-f01fe520f2b7"
-        }
-      ],
-      "severity": "warning",
-      "type": "silk_over_copper"
-    },
-    {
-      "description": "Silkscreen clipped by solder mask",
-      "items": [
-        {
-          "description": "Footprint text of P3_R16 (R16)",
-          "pos": {
-            "x": 136.05,
-            "y": 21.95
-          },
-          "uuid": "3da941df-9185-5476-90b8-427ff22370fa"
-        },
-        {
-          "description": "Pad 3 [P3/GND] of P3_D2 on F.Cu",
-          "pos": {
-            "x": 136.1,
-            "y": 21.3375
-          },
-          "uuid": "35ee4e2e-d2f8-54dc-8cc8-f824675c6240"
-        }
-      ],
-      "severity": "warning",
-      "type": "silk_over_copper"
-    },
-    {
-      "description": "Silkscreen clipped by solder mask",
-      "items": [
-        {
           "description": "Arc of P1_D1 on F.Silkscreen",
           "pos": {
             "x": 38.15,
@@ -4358,6 +4289,29 @@
         {
           "description": "Segment on F.Silkscreen",
           "pos": {
+            "x": 105.6,
+            "y": 30.5
+          },
+          "uuid": "c411d581-76c6-5038-be97-7d4d5a92151c"
+        },
+        {
+          "description": "Pad 1 [P2/+10V] of P2_C16 on F.Cu",
+          "pos": {
+            "x": 101.8,
+            "y": 29.1875
+          },
+          "uuid": "af6fb626-c8e9-5d25-9a33-de13f309b57f"
+        }
+      ],
+      "severity": "warning",
+      "type": "silk_over_copper"
+    },
+    {
+      "description": "Silkscreen clipped by solder mask",
+      "items": [
+        {
+          "description": "Segment on F.Silkscreen",
+          "pos": {
             "x": 46.6,
             "y": 30.5
           },
@@ -4370,29 +4324,6 @@
             "y": 29.1875
           },
           "uuid": "8cc39f3f-18a7-5e38-869f-78300f2a96ab"
-        }
-      ],
-      "severity": "warning",
-      "type": "silk_over_copper"
-    },
-    {
-      "description": "Silkscreen clipped by solder mask",
-      "items": [
-        {
-          "description": "Footprint text of P2_R16 (R16)",
-          "pos": {
-            "x": 77.05,
-            "y": 21.95
-          },
-          "uuid": "d25580b9-7c5d-5ebc-b1c2-0c1772975e64"
-        },
-        {
-          "description": "Pad 3 [P2/GND] of P2_D2 on F.Cu",
-          "pos": {
-            "x": 77.1,
-            "y": 21.3375
-          },
-          "uuid": "02566cea-10f2-5c3c-b25c-813bb88e165f"
         }
       ],
       "severity": "warning",
@@ -4416,6 +4347,29 @@
             "y": 21.3375
           },
           "uuid": "8cb7c19d-1991-5cb8-ba8f-cd6c8c319837"
+        }
+      ],
+      "severity": "warning",
+      "type": "silk_over_copper"
+    },
+    {
+      "description": "Silkscreen clipped by solder mask",
+      "items": [
+        {
+          "description": "Footprint text of P2_R16 (R16)",
+          "pos": {
+            "x": 77.05,
+            "y": 21.95
+          },
+          "uuid": "d25580b9-7c5d-5ebc-b1c2-0c1772975e64"
+        },
+        {
+          "description": "Pad 3 [P2/GND] of P2_D2 on F.Cu",
+          "pos": {
+            "x": 77.1,
+            "y": 21.3375
+          },
+          "uuid": "02566cea-10f2-5c3c-b25c-813bb88e165f"
         }
       ],
       "severity": "warning",
@@ -4508,6 +4462,52 @@
             "y": 89.6
           },
           "uuid": "805f5623-78ab-578c-a2a8-a13ed069cee9"
+        }
+      ],
+      "severity": "warning",
+      "type": "silk_over_copper"
+    },
+    {
+      "description": "Silkscreen clipped by solder mask",
+      "items": [
+        {
+          "description": "Segment on F.Silkscreen",
+          "pos": {
+            "x": 164.6,
+            "y": 30.5
+          },
+          "uuid": "962a4f11-65ea-50d7-b8e7-118bbb063477"
+        },
+        {
+          "description": "Pad 1 [P3/+10V] of P3_C16 on F.Cu",
+          "pos": {
+            "x": 160.8,
+            "y": 29.1875
+          },
+          "uuid": "66a61c4b-306e-5eed-b97e-f01fe520f2b7"
+        }
+      ],
+      "severity": "warning",
+      "type": "silk_over_copper"
+    },
+    {
+      "description": "Silkscreen clipped by solder mask",
+      "items": [
+        {
+          "description": "Footprint text of P3_R16 (R16)",
+          "pos": {
+            "x": 136.05,
+            "y": 21.95
+          },
+          "uuid": "3da941df-9185-5476-90b8-427ff22370fa"
+        },
+        {
+          "description": "Pad 3 [P3/GND] of P3_D2 on F.Cu",
+          "pos": {
+            "x": 136.1,
+            "y": 21.3375
+          },
+          "uuid": "35ee4e2e-d2f8-54dc-8cc8-f824675c6240"
         }
       ],
       "severity": "warning",
