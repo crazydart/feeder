@@ -19,6 +19,15 @@ Modified 2026-10-11 from upstream commit `05843dd0e7551cbf20dc831514174f446f3768
 
 Hardware remains under CERN-OHL-W v2; see [LICENSE](LICENSE). The modified PCBs use AI Herding Cats branding and credit Opulo for the original design. Other upstream designs and documentation remain below.
 
+## Accessories
+
+- [Gridfinity holder for 8 mm feeders](cad/accessories/gridfinity-8mm-holder/README.md) — five slots on a 5 × 3 base, with STL and editable OpenSCAD source. Prototype 06 provides 10 mm of feeder lift and 4 mm radial rear relief for mounted reels; revised reel clearance awaits a physical fit check.
+- [Gridfinity holder for 16 mm and 24 mm feeders](cad/accessories/gridfinity-2u-holder/README.md) — four slots on a 5 × 4 base, rendered with both 2u feeder models. Physical fit is untested.
+
+## Parts sourcing
+
+- [Feeder motor sourcing](docs/motor-sourcing.md) — motor specifications, supplier URLs, fit and wiring details, and the October 16, 2026 checkout costs for comparing direct imports with the Opulo kit.
+
 ## Upstream LumenPnP Feeders
 The LumenPnP Feeders are open source pick and place feeders to aid in [Mid-Scale Manufacturing](https://stephenhawes.com/level-2-manufacturing/).
 
