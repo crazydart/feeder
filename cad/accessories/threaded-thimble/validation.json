@@ -1,0 +1,191 @@
+{
+  "prototype": "01",
+  "parameters": {
+    "head_diameter": 30.0,
+    "head_thickness": 3.0,
+    "shaft_diameter": 11.5,
+    "seat_z": 11.5,
+    "key_depth": 2.5,
+    "bore_cone_tip_z": 0.08,
+    "stem_length": 8.0,
+    "thread_diameter": 8.0,
+    "thread_pitch": 2.0,
+    "thread_depth": 0.65,
+    "thread_crest": 0.4,
+    "thread_flank": 0.7,
+    "radial_clearance": 0.25,
+    "locking_interference": 0.08,
+    "pilot_length": 1.5,
+    "locking_collar_top_z": 4.8,
+    "split_width": 1.0,
+    "split_end_z": 9.5,
+    "angular_steps": 128.0,
+    "steps_per_pitch": 80.0,
+    "eps": 0.01
+  },
+  "parts": {
+    "thimble": {
+      "file": "threaded-thimble-prototype-01.stl",
+      "watertight": true,
+      "connected_solids": 1,
+      "sha256": "087f3b82ba16710a419f9f0d037a77ac3f84437ca86e806f69c7d960535afb8d",
+      "bounds_mm": [
+        [
+          -5.75,
+          -5.75,
+          0.0
+        ],
+        [
+          5.75,
+          5.75,
+          14.0
+        ]
+      ],
+      "volume_mm3": 829.7212922197592,
+      "elevated_flat_underside_area_mm2": 0.0,
+      "minimum_downward_face_angle_from_horizontal_deg": 45.008012947526645
+    },
+    "screw": {
+      "file": "reel-retaining-screw-30mm-prototype-01.stl",
+      "watertight": true,
+      "connected_solids": 1,
+      "sha256": "80dd714aeb45d95ed60377b32a1c2309a9112dfa84ccf5a390ec56576fecb5f1",
+      "bounds_mm": [
+        [
+          -15.0,
+          -15.0,
+          0.0
+        ],
+        [
+          15.0,
+          15.0,
+          11.0
+        ]
+      ],
+      "volume_mm3": 2333.8949351317124,
+      "elevated_flat_underside_area_mm2": 0.0,
+      "minimum_downward_face_angle_from_horizontal_deg": 45.00845255679647
+    }
+  },
+  "arm_mount": {
+    "original_mount_preserved_below_z_mm": 0.1,
+    "original_overlap_mm3": 2.803519758184914,
+    "new_overlap_mm3": 2.8035181747082256,
+    "screw_arm_overlap_mm3": 0,
+    "note": "Retains original quarter-turn mounting interface; not a new latch."
+  },
+  "screw_motion": [
+    {
+      "turns_out": 0.0,
+      "pilot_interference_mm3": 1.4486878797964948
+    },
+    {
+      "turns_out": 0.0625,
+      "pilot_interference_mm3": 1.2809400881075466
+    },
+    {
+      "turns_out": 0.125,
+      "pilot_interference_mm3": 1.113192108157899
+    },
+    {
+      "turns_out": 0.1875,
+      "pilot_interference_mm3": 0.9454439154898822
+    },
+    {
+      "turns_out": 0.25,
+      "pilot_interference_mm3": 0.777695673759195
+    },
+    {
+      "turns_out": 0.3125,
+      "pilot_interference_mm3": 0.6099477415440901
+    },
+    {
+      "turns_out": 0.375,
+      "pilot_interference_mm3": 0.44219971610008696
+    },
+    {
+      "turns_out": 0.4375,
+      "pilot_interference_mm3": 0.2744515734722602
+    },
+    {
+      "turns_out": 0.5,
+      "pilot_interference_mm3": 0.10670346453256603
+    },
+    {
+      "turns_out": 0.5625,
+      "pilot_interference_mm3": 0.0
+    },
+    {
+      "turns_out": 0.625,
+      "pilot_interference_mm3": 0.0
+    },
+    {
+      "turns_out": 0.6875,
+      "pilot_interference_mm3": 0.0
+    },
+    {
+      "turns_out": 0.75,
+      "pilot_interference_mm3": 0.0
+    },
+    {
+      "turns_out": 0.8125,
+      "pilot_interference_mm3": 0.0
+    },
+    {
+      "turns_out": 0.875,
+      "pilot_interference_mm3": 0.0
+    },
+    {
+      "turns_out": 0.9375,
+      "pilot_interference_mm3": 0.0
+    },
+    {
+      "turns_out": 1.0,
+      "pilot_interference_mm3": 0.0
+    }
+  ],
+  "thread_and_pilot": {
+    "major_diameter_mm": 8.0,
+    "pitch_mm": 2.0,
+    "normal_radial_clearance_mm": 0.25,
+    "minimum_body_wall_at_thread_mm": 1.5,
+    "pilot_diameter_mm": 6.7,
+    "locking_collar_diameter_mm": 6.54,
+    "pilot_nose_to_cone_axial_clearance_mm": 0.36999999999999966
+  },
+  "reference_reel": {
+    "hub_diameter_mm": 13.3,
+    "width_mm": 10,
+    "radial_hub_clearance_mm": 0.9000000000000004,
+    "retainer_radial_overlap_mm": 8.35,
+    "scope": "Reference reel only; other reel hubs and widths require fit testing."
+  },
+  "neighbor_24mm_pitch": "No rigid overlap with adjacent arm, thimble or screw",
+  "neighbor_42mm_pitch": "No rigid overlap with adjacent arm, thimble or screw",
+  "limits": [
+    "No physical print, retention torque, wear, creep or transport test has been performed.",
+    "Spring behavior depends on filament and printer calibration; PETG is the intended material.",
+    "Original arm mount geometry is retained; hold the thimble against turning when undoing the cap."
+  ],
+  "slicer": {
+    "application": "Bambu Studio 02.07.00.55",
+    "machine_example": "Bambu Lab X1 Carbon 0.4 nozzle",
+    "filament": "Generic PETG",
+    "layer_height_mm": 0.16,
+    "initial_layer_height_mm": 0.2,
+    "wall_loops": 4,
+    "infill_density_percent": 99,
+    "infill_pattern": "cubic",
+    "supports_enabled": false,
+    "support_extrusions": false,
+    "warning_message": "",
+    "layers": 87,
+    "estimated_seconds": 1816.751708984375,
+    "estimated_filament_g": 4.2610249519348145,
+    "geometry_sha256": {
+      "thimble": "087f3b82ba16710a419f9f0d037a77ac3f84437ca86e806f69c7d960535afb8d",
+      "screw": "80dd714aeb45d95ed60377b32a1c2309a9112dfa84ccf5a390ec56576fecb5f1"
+    },
+    "note": "Slicer output checked; no physical print performed. Printer-specific G-code is not a deliverable."
+  }
+}
