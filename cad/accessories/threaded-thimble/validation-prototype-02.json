@@ -1,0 +1,155 @@
+{
+  "prototype": "02",
+  "parameters": {
+    "spindle_extension": 2.0,
+    "arm_back_z": -2.4,
+    "arm_face_z": 0.1,
+    "original_seat_z": 11.5,
+    "spindle_diameter": 11.5,
+    "socket_fill_radius": 8.5,
+    "root_fillet_radius": 0.4
+  },
+  "arm_file": "spool-arm-integrated-thimble-plus2mm-prototype-02.stl",
+  "arm_sha256": "3aab9b78b9532b11536470a43b7021beb0a99b89feff3856c893f0ae4b75fc66",
+  "screw_file": "reel-retaining-screw-30mm-prototype-01.stl",
+  "screw_sha256": "80dd714aeb45d95ed60377b32a1c2309a9112dfa84ccf5a390ec56576fecb5f1",
+  "screw_unchanged": true,
+  "watertight": true,
+  "connected_solids": 1,
+  "bounds_print_mm": [
+    [
+      -10.099267959594727,
+      -55.20000076293945,
+      0.0
+    ],
+    [
+      139.89999389648438,
+      9.799778938293457,
+      15.899999618530273
+    ]
+  ],
+  "volume_mm3": 8446.445133813286,
+  "elevated_flat_underside_area_mm2": 0.0,
+  "minimum_underside_angle_from_horizontal_deg": 44.50542701975972,
+  "excluded_sub_micron_downward_sliver_area_mm2": 3.0486525577925356e-06,
+  "original_arm_material_removed_mm3": 2.4498106237539712e-05,
+  "socket_solid_through_arm": true,
+  "solid_spindle_root_diameter_mm": 11.5,
+  "original_reel_space_mm": 11.4,
+  "revised_reel_space_mm": 13.4,
+  "added_reel_space_mm": 2.0,
+  "translated_bore_symmetric_difference_mm3": 1.0519893682688537e-05,
+  "screw_motion": [
+    {
+      "turns_out": 0.0,
+      "pilot_interference_mm3": 1.4486878698498014
+    },
+    {
+      "turns_out": 0.0625,
+      "pilot_interference_mm3": 1.280940082381747
+    },
+    {
+      "turns_out": 0.125,
+      "pilot_interference_mm3": 1.1131921064144688
+    },
+    {
+      "turns_out": 0.1875,
+      "pilot_interference_mm3": 0.945443913831781
+    },
+    {
+      "turns_out": 0.25,
+      "pilot_interference_mm3": 0.777695660643199
+    },
+    {
+      "turns_out": 0.3125,
+      "pilot_interference_mm3": 0.6099477403466741
+    },
+    {
+      "turns_out": 0.375,
+      "pilot_interference_mm3": 0.44219971544479125
+    },
+    {
+      "turns_out": 0.4375,
+      "pilot_interference_mm3": 0.2744515720371214
+    },
+    {
+      "turns_out": 0.5,
+      "pilot_interference_mm3": 0.10670345143659314
+    },
+    {
+      "turns_out": 0.5625,
+      "pilot_interference_mm3": 0.0
+    },
+    {
+      "turns_out": 0.625,
+      "pilot_interference_mm3": 0.0
+    },
+    {
+      "turns_out": 0.6875,
+      "pilot_interference_mm3": 0.0
+    },
+    {
+      "turns_out": 0.75,
+      "pilot_interference_mm3": 0.0
+    },
+    {
+      "turns_out": 0.8125,
+      "pilot_interference_mm3": 0.0
+    },
+    {
+      "turns_out": 0.875,
+      "pilot_interference_mm3": 0.0
+    },
+    {
+      "turns_out": 0.9375,
+      "pilot_interference_mm3": 0.0
+    },
+    {
+      "turns_out": 1.0,
+      "pilot_interference_mm3": 0.0
+    }
+  ],
+  "reference_reel": {
+    "diameter_mm": 177,
+    "hub_diameter_mm": 13.3,
+    "width_mm": 12,
+    "remaining_axial_play_mm": 1.4000000000000004
+  },
+  "limits": [
+    "The previous screw mechanism passed the user's physical test; its STL is unchanged.",
+    "The integrated arm and added reel clearance have not been physically tested.",
+    "Root geometry is checked for solid continuity; no mechanical load or fatigue test was performed.",
+    "Neighboring feeder spacing is outside this revision's validation scope, as requested."
+  ],
+  "date": "2026-10-19",
+  "physical_feedback": {
+    "detachable_prototype_01_mount": "Reported too tight and broke immediately.",
+    "prototype_01_screw": "User reported the screw mechanism was great; geometry retained.",
+    "requested_change": "Integrate thimble into arm and add 2 mm usable reel space."
+  },
+  "slicing": {
+    "application": "Bambu Studio 02.07.00.55",
+    "printer_profile": "Bambu Lab X1 Carbon 0.4 nozzle",
+    "part": "spool-arm-integrated-thimble-plus2mm-prototype-02.stl",
+    "return_code": 0,
+    "warning_message": "",
+    "settings": {
+      "layer_height": "0.16",
+      "initial_layer_print_height": "0.2",
+      "wall_loops": "4",
+      "top_shell_layers": "5",
+      "bottom_shell_layers": "5",
+      "filament_type": "PETG",
+      "sparse_infill_density": "99%",
+      "enable_support": "0"
+    },
+    "support_toolpath_features": 0,
+    "layers": 99,
+    "triangle_count": 119054,
+    "filament_g": 10.573065757751465,
+    "estimated_total_seconds": 2803.683349609375,
+    "archive_integrity_checked": true,
+    "gcode_sha256": "eb910e469d4e295e5a7b79576f2e693c65371dc74f7ee9a9ebb14e192f4a2679",
+    "scope": "New integrated arm only; existing screw reused. Machine-specific G-code and expanded profiles are ignored generated artifacts."
+  }
+}

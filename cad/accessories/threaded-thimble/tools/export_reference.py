@@ -59,6 +59,7 @@ def main():
         for path, label, member, matrix in resolve(assembly, obj):
             if path.name == "spool-holder.FCStd":
                 write(shape(path, member), out / "spool-arm.stl", inverse_thimble @ matrix)
+                (HERE / "reference/spool-arm.stl").write_bytes((out / "spool-arm.stl").read_bytes())
                 return
     raise RuntimeError("Spool arm missing from assembly")
 

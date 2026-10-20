@@ -1,132 +1,118 @@
-# Threaded reel-retaining thimble — prototype 01
+# Integrated spool arm and threaded thimble — prototype 02
 
-Two printed parts replace the existing thimble's small reel-retaining lip with
-a removable **30 mm diameter, 3 mm thick screw head**. Designed against this
-repository's 8 mm feeder spool arm. The original feeder parts are unchanged.
+The thimble is now **part of the spool arm**, with **2 mm more usable reel
+space**. This removes the detachable connector that broke during the user's
+first fit test. The screw mechanism worked well, so its geometry and STL are
+unchanged: **reuse the screw you already printed**.
 
-**Prototype: geometry and slicing checked; physical fit, release torque,
-long-term spring retention and transport behavior have not been tested. Print
-one pair and test it before making a set.**
+![Integrated arm and existing retaining screw](renders/prototype-02/01-integrated-arm.png)
 
-| Print one of each | File | Overall print dimensions |
+| Part | File | Overall print dimensions |
 |---|---|---|
-| Hollow threaded thimble | [STL](stl/threaded-thimble-prototype-01.stl) | 11.5 × 11.5 × 14 mm |
-| Retaining screw with grip scallops | [STL](stl/reel-retaining-screw-30mm-prototype-01.stl) | 30 × 30 × 11 mm; head is 3 mm thick |
+| New arm with integral threaded thimble | [Print STL](stl/spool-arm-integrated-thimble-plus2mm-prototype-02.stl) | Approximately 150 × 65 × 15.9 mm |
+| Existing retaining screw, unchanged | [STL if another is needed](stl/reel-retaining-screw-30mm-prototype-01.stl) | 30 × 30 × 11 mm; head is 3 mm thick |
 
-![The two parts](renders/01-two-printable-parts.png)
+**The new arm passes geometry and slicing checks; its physical fit and load
+strength still need a print test.** The screw's successful physical test does
+not establish the strength of the new integrated arm.
 
-The thimble is shown mouth-up here to reveal the threads. **Its STL is already
-oriented mouth-down for printing.** The screw prints with its large head flat
-on the bed and the threaded stem pointing up.
+## What changed
 
-## Fit and retention
+- The old mounting socket and its locking grooves are filled through the
+  arm's full thickness. The thimble merges directly into this solid backing;
+  there is no quarter-turn key or narrow mounting neck.
+- The spindle is 11.5 mm in diameter, with a small 0.4 mm root fillet. The
+  fillet's maximum diameter is 12.3 mm, inside the reference reel's 13.3 mm
+  hub bore, so it does not consume the added reel space.
+- The cap seat and complete internal bore move outward together by 2 mm.
+  Space between the arm face and the seated cap increases from **11.4 to
+  13.4 mm**. A modeled 12 mm wide reel has 1.4 mm of axial play.
+- The existing coarse thread, pilot collar and screw engagement are retained.
+  The screw still has a **30 mm diameter, 3 mm thick head**. Its STL is
+  byte-for-byte identical to the one the user tested.
+- The rest of the original arm, including its feeder attachment, is retained.
+  This revision uses the repository's 8 mm feeder spool arm.
 
-- The original quarter-turn key, V groove and upper mounting shoulder come
-  directly from `cad/FDM/thimble.FCStd`. Both sides of the groove are retained
-  so the arm is captured at the original axial position.
-- The old outer reel lip is removed. A round 11.5 mm shaft replaces the
-  original D-shaped reel-bearing shaft above the mounting shoulder. The
-  repository's reel reference has a 13.3 mm hub bore, leaving 0.9 mm radial
-  clearance. Other hub sizes require a physical check.
-- Custom **8 mm diameter × 2 mm pitch**, single-start, right-hand threads use
-  broad, truncated crests and approximately 45° printable flanks. These are
-  a matched printed pair, **not an ISO M8 screw/nut interface**. Normal radial
-  thread clearance is 0.25 mm; the body wall at the deepest thread is 1.5 mm.
-- An 8 mm stem includes a 1.5 mm smooth pilot and thread lead-in. Two rounded
-  slots divide the tip into four fingers. A 6.54 mm collar inside the thimble
-  compresses the nominal 6.7 mm pilot by 0.08 mm per side near full engagement.
-  This is intended to add friction against unwinding. The threads themselves
-  retain running clearance; the interference is in the smooth pilot.
-- The screw stops against the thimble's end face at the **original lip contact
-  plane**, leaving room for the reference 10 mm wide reel to rotate. Its nose
-  clears the conical bore end by about 0.37 mm. The head overlaps the reference
-  hub opening by 8.35 mm radially.
-- The larger heads remain clear of neighboring arms/thimbles at the 24 mm
-  pitch of the five-feeder holder. Their diameters lie in parallel planes, so
-  a 30 mm head does not require 30 mm feeder spacing. A 42 mm pitch was also
-  screened; this does not establish compatibility with a different arm design.
+![Existing cap seated on the integral thimble](renders/prototype-02/02-hub-and-cap.png)
 
-![Assembled section](renders/02-assembled-section.png)
+The threads are a custom **8 mm major diameter × 2 mm pitch**, single-start,
+right-hand printed pair, not an ISO M8 interface. Broad crests, approximately
+45° flanks and 0.25 mm radial running clearance are unchanged. The screw's
+split smooth pilot compresses against a collar near full engagement to resist
+unwinding. This is the same retention feature as prototype 01.
 
-This is a section of the actual STLs. The tip is shown in its undeformed CAD
-shape; the small pilot/collar interference is intentional. The conical bore
-end closes with printable slopes when the thimble is printed mouth-down.
+![Section through the solid arm connection, bore and seated screw](renders/prototype-02/03-integrated-section.png)
 
-## Printing and first fit
+The section is cut from the actual exported STLs. The pilot is shown in its
+undeformed shape; its small collar interference is intentional.
 
-Use **unfilled PETG** as the starting material for the flexible pilot.
-PETG's toughness, flexibility and layer adhesion suit this design intent;
-see [Prusa's PETG material guidance](https://help.prusa3d.com/article/petg_2059).
-Actual spring life still needs testing. PLA can be used to check shape, but
-its retention behavior is not validated here.
+## Printing and installation
 
-- Keep the supplied STL orientations and print at 100% scale.
+- Print the new arm at **100% scale with its long flat back on the bed and
+  the thimble opening pointing up**, as supplied in the STL. No supports are
+  needed in the checked print layout.
+- Use unfilled PETG as the starting material. The previous cap's material
+  guidance remains applicable; see [Prusa's PETG guidance](https://help.prusa3d.com/article/petg_2059).
 - Starting settings: 0.4 mm nozzle, 0.16 mm layers, four walls, five top and
-  bottom layers, dense infill. Validation used 99% infill and no supports.
-- Use your calibrated filament profile. Remove strings from the bore and the
-  1 mm finger slots; keep the mount's V groove clean. A brim is optional if
-  the thimble's annular bed contact does not adhere reliably.
-- Fit the pair off the feeder first. Turn counterclockwise gently until the
-  thread starts align, then screw in clockwise by hand. Expect increased
-  resistance in approximately the last half-turn as the pilot enters its
-  collar. Seat the head gently; do not use tools to force it.
-- Align the key flats with the arm opening, insert fully, then turn a quarter
-  turn to capture the arm. The shaft is round, so use the **key flats** for
-  alignment instead of the old shaft flat. The original mounting mechanism
-  is documented in [Opulo's spool-arm instructions](https://docs.opulo.io/feeders/4-mounting/mounting/).
-- Check the thimble cannot pull straight out. Fit the reel and cap; check the
-  reel still turns freely. Prevent the thimble itself from rotating when
-  undoing the cap, since its original mount also releases with a quarter turn.
-- Repeat several screw cycles and gently jostle the loaded assembly over a
-  table to check retention. Check again after leaving the cap installed: the
-  split pilot can wear or relax with time.
+  bottom layers, and dense infill. The slicing check used 99% infill with
+  supports disabled. Use a calibrated profile for your own printer.
+- If printing another screw, keep its large head flat on the bed and its
+  stem pointing up. The supplied screw STL already has this orientation.
+- Replace the existing spool arm with this integrated part using the feeder's
+  existing arm attachment. There is no thimble connector to press or twist in.
+- Remove any strings from the bore. Start the existing screw gently and seat
+  it by hand; the final part of the turn should engage the retention pilot.
+  Do not force a binding thread with tools.
+- Fit a reel, confirm it rotates freely with the cap seated, and check the
+  loaded arm and retention over a table before moving a feeder around.
 
-`radial_clearance` controls the free-running thread fit in [thimble.scad](thimble.scad).
-`locking_interference` separately controls pilot compression. If the final
-half-turn is too tight, reduce it from 0.08 to 0.04 mm and reprint the thimble;
-if the ordinary threads bind, adjust the radial thread clearance instead.
-Do not scale either part to tune fit, because that also changes the mounting
-key, head size and thread pitch.
+The original source arm has approximately 45° chamfers. Mesh checks found no
+flat downward faces above the bed and a minimum practical underside angle of
+44.5° from horizontal. Neighboring feeder spacing was excluded from this
+revision's checks at the user's request.
 
-![Exploded mounting detail](renders/03-exploded-mount.png)
+## Source and reproduction
 
-The gray arm is cropped from the repository assembly for this illustration.
-The cap is lifted along its axis to show the screw and receiving bore.
-
-## Reproduction and checks
+[integrated-arm.scad](integrated-arm.scad) builds the new arm from the saved
+arm mesh and imports the unchanged bore from [thimble.scad](thimble.scad).
+`spindle_extension = 2` controls the extra usable reel width. The checked-in
+[arm reference](reference/spool-arm.stl) permits a build without FreeCAD.
 
 From this directory:
 
 ```sh
-# The checked-in mount reference allows a build without FreeCAD or Python CAD libraries.
+# Build the integrated arm and the unchanged screw.
 python3 tools/build.py
 
-# Refresh reference meshes from the saved FreeCAD BReps when needed.
+# Refresh reference meshes only when the upstream CAD has changed.
 uv run tools/export_reference.py
-uv run tools/check_geometry.py
 
-# Render the actual exported STLs.
-blender --background --python tools/render.py
+# Verify solid continuity, reel clearance and compatibility with the tested screw.
+uv run tools/check_integrated_arm.py
+
+# Render the actual STL geometry.
+blender --background --python tools/render_integrated_arm.py
 ```
 
-OpenSCAD with the Manifold backend is required. The thread surface is generated
-in the SCAD source; no external thread library is required. CAD reference export
-uses pinned OCP dependencies through `uv`, without recomputing the FreeCAD files.
+OpenSCAD with the Manifold backend is required. Reference export reads the
+saved FreeCAD BReps with pinned OCP dependencies through `uv`; it does not
+recompute the FreeCAD files. STL export discards only exactly zero-area
+facets caused by float32 rounding at the original arm's bottom plane.
 
-Validation results are recorded in [validation.json](validation.json), including
-STL hashes. Both STLs are single connected, watertight solids. They have no flat
-undersides above the bed; downward surfaces are at least 45° from horizontal.
-The original and replacement mount have the same overlap with the saved arm
-geometry to within 0.00001 mm³ (the source assembly itself contains a small
-nominal interference). A 17-position screw motion check found rigid overlap
-only in the intended flexible pilot. The reference reel and neighboring arms
-clear the new parts.
+[validation-prototype-02.json](validation-prototype-02.json) records file
+hashes and validation results. The arm is one connected, watertight solid.
+Checks confirm the filled socket, continuous spindle root, preserved arm
+geometry, translated bore, unchanged screw, 17 positions through the final
+screw turn, and clearance for a 177 mm diameter reel with a 13.3 mm bore and
+12 mm width. These are geometric checks, not load or fatigue tests.
 
-Bambu Studio slicing used an X1 Carbon 0.4 mm nozzle profile as a verification
-example, with PETG, 0.16 mm layers, four walls and supports disabled. Printer
-G-code is left in the ignored `generated/` directory; slice the STLs for your
-own printer. Geometric checks and successful slicing are not physical tests.
+Bambu Studio sliced the new arm with an X1 Carbon 0.4 mm nozzle profile as a
+verification example. No supports were generated. Machine-specific G-code
+remains in the ignored `generated/` directory; slice the STL for your printer.
+
+The [superseded detachable design](prototype-01.md), its STLs and
+[original validation](validation.json) remain for history. Use
+`python3 tools/build.py --legacy` only to reproduce that version.
 
 Modified 2026-10-19 from the repository's Opulo thimble and spool-arm design.
-The mount reference is a derived mesh of that design. Hardware remains under
-the repository's [CERN-OHL-W v2 license](../../../LICENSE).
+Hardware remains under the repository's [CERN-OHL-W v2 license](../../../LICENSE).
