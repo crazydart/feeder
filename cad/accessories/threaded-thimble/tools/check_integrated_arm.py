@@ -10,7 +10,7 @@ import subprocess
 from pathlib import Path
 import numpy as np
 import trimesh
-from build import INTEGRATED_ARM, PARTS
+from build import INTEGRATED_ARM, PARTS, PROTOTYPE_02_ARM
 from check_geometry import common, volume, bounds_box
 
 HERE = Path(__file__).resolve().parents[1]
@@ -29,8 +29,11 @@ def main():
     OUT.mkdir(exist_ok=True)
     p = {k:float(v) for k,v in re.findall(r"^(\w+)\s*=\s*(-?[\d.]+)\s*;",
                                          (HERE/"integrated-arm.scad").read_text(),re.M)}
-    lift, back, face = p["spindle_extension"], p["arm_back_z"], p["arm_face_z"]
-    seat = p["original_seat_z"] + lift
+    lift, back, old_face = p["spindle_extension"], p["arm_back_z"], p["arm_face_z"]
+    extra = p["reinforcement_height"]
+    face = old_face + extra
+    shift = lift + extra
+    seat = p["original_seat_z"] + shift
     print_mesh = trimesh.load_mesh(HERE/"stl"/INTEGRATED_ARM)
     assert print_mesh.is_volume and len(print_mesh.split()) == 1
     assert abs(print_mesh.bounds[0,2]) < 1e-5
@@ -38,9 +41,12 @@ def main():
     n,c = print_mesh.face_normals,print_mesh.triangles_center
     down = (n[:,2]<-1e-5)&(c[:,2]>.02)
     flat_area = float(print_mesh.area_faces[down&(n[:,2]<-.99999)].sum())
-    # Bottom-plane clipping leaves sub-micron sliver facets on the existing
-    # chamfer. Record them, but screen practical overhangs on measurable faces.
-    significant = down & (print_mesh.area_faces > 1e-6)
+    # Boolean intersections leave float32 sliver facets along the chamfer
+    # and taper edge. Record them; screen practical overhangs on faces whose
+    # smallest altitude exceeds 0.00001 mm, with a strict total-area limit.
+    longest_edge = np.linalg.norm(np.roll(print_mesh.triangles,1,axis=1)-
+                                  print_mesh.triangles,axis=2).max(axis=1)
+    significant = down & (2*print_mesh.area_faces/longest_edge > 1e-5)
     tiny_area = float(print_mesh.area_faces[down & ~significant].sum())
     assert tiny_area < .0001
     min_angle = float(np.degrees(np.arccos(np.clip(-n[significant,2],0,1))).min())
@@ -52,22 +58,35 @@ def main():
     removed = volume(trimesh.boolean.difference([original,arm],engine="manifold"))
     assert removed < .001, "Existing arm/feeder attachment material was removed"
     additions = trimesh.boolean.difference([arm,original],engine="manifold")
-    outside_hub = bounds_box([10,-70,-5],[150,20,25])
-    assert volume(common(additions,outside_hub)) < .001
+    attachment = bounds_box([p["reinforcement_end"],-70,-5],[150,20,25])
+    assert volume(common(additions,attachment)) < .001, "Feeder attachment changed"
+
+    thickness = []
+    for x,y in [(20,-9),(50,-20),(80,-34),(100,-43),(108,-46.5),(111.5,-46.5)]:
+        zs, original_zs = [] , []
+        for mesh,values in [(arm,zs),(original,original_zs)]:
+            hits,_,_ = mesh.ray.intersects_location([[x,y,-10]],[[0,0,1]])
+            values.extend(hits[:,2])
+        measured, prior = max(zs)-min(zs), max(original_zs)-min(original_zs)
+        ramp = min(1,max(0,(p["reinforcement_end"]-x)/
+                         (p["reinforcement_end"]-p["reinforcement_taper_start"])))
+        assert abs(measured-(prior+extra*ramp)) < .002
+        thickness.append({"x_mm":x,"y_mm":y,"original_mm":float(prior),
+                          "reinforced_mm":float(measured)})
 
     # The socket must now be solid through the entire thickness of the arm.
     backing = trimesh.creation.cylinder(radius=8.4,height=face-back-.02,sections=128)
     backing.apply_translation([0,0,(face+back)/2])
     assert volume(trimesh.boolean.difference([backing,arm],engine="manifold")) < .001
     root = trimesh.creation.cylinder(radius=p["spindle_diameter"]/2-.01,
-                                     height=lift,sections=128)
-    root.apply_translation([0,0,face+lift/2])
+                                     height=.9,sections=128)
+    root.apply_translation([0,0,face+.45])
     assert volume(trimesh.boolean.difference([root,arm],engine="manifold")) < .001
 
     # Verify the ENTIRE proven bore is translated, including its pilot collar.
     bore = export("integrated-arm.scad","bore","integrated-bore.stl")
     old_bore = export("thimble.scad","female","prototype-01-bore.stl")
-    old_bore.apply_translation([0,0,lift])
+    old_bore.apply_translation([0,0,shift])
     bore_diff = sum(volume(trimesh.boolean.difference(pair,engine="manifold"))
                     for pair in ([bore,old_bore],[old_bore,bore]))
     assert bore_diff < .001
@@ -78,7 +97,9 @@ def main():
     cap = trimesh.load_mesh(cap_path)
     cap.apply_transform(trimesh.transformations.rotation_matrix(np.pi,[1,0,0]))
     cap.apply_translation([0,0,seat+3])
-    assert abs((seat-face)-(p["original_seat_z"]-face)-2) < 1e-9
+    previous = json.loads((HERE/"validation-prototype-02.json").read_text())
+    assert hashlib.sha256((HERE/"stl"/PROTOTYPE_02_ARM).read_bytes()).hexdigest() == previous["arm_sha256"]
+    assert abs((seat-face)-previous["revised_reel_space_mm"]+1) < 1e-9
 
     motion = []
     for turn in np.linspace(0,1,17):
@@ -86,7 +107,7 @@ def main():
         moved.apply_transform(trimesh.transformations.rotation_matrix(turn*2*np.pi,[0,0,1]))
         moved.apply_translation([0,0,turn*2])
         hit = common(arm,moved)
-        allowed = common(hit,bounds_box([-6,-6,3+lift],[6,6,4.9+lift])) if len(hit.faces) else hit
+        allowed = common(hit,bounds_box([-6,-6,3+shift],[6,6,4.9+shift])) if len(hit.faces) else hit
         assert volume(hit)-volume(allowed) < .002
         motion.append({"turns_out":float(turn),"pilot_interference_mm3":volume(hit)})
     assert motion[0]["pilot_interference_mm3"] > .1
@@ -100,7 +121,7 @@ def main():
         assert volume(common(cap,placed)) < .001
 
     report = {
-        "prototype":"02", "parameters":p,
+        "prototype":"03", "parameters":p,
         "arm_file":INTEGRATED_ARM,
         "arm_sha256":hashlib.sha256((HERE/"stl"/INTEGRATED_ARM).read_bytes()).hexdigest(),
         "screw_file":PARTS["screw"], "screw_sha256":cap_hash, "screw_unchanged":True,
@@ -111,15 +132,22 @@ def main():
         "excluded_sub_micron_downward_sliver_area_mm2":tiny_area,
         "original_arm_material_removed_mm3":removed,
         "socket_solid_through_arm":True, "solid_spindle_root_diameter_mm":p["spindle_diameter"],
-        "original_reel_space_mm":p["original_seat_z"]-face,
+        "original_reel_space_mm":p["original_seat_z"]-old_face,
+        "prototype_02_reel_space_mm":previous["revised_reel_space_mm"],
         "revised_reel_space_mm":seat-face, "added_reel_space_mm":lift,
+        "reduction_from_prototype_02_mm":previous["revised_reel_space_mm"]-(seat-face),
+        "reel_contact_face_native_z_mm":face,
+        "screw_seat_native_z_mm":seat,
+        "reinforced_sections":thickness,
+        "feeder_attachment_unchanged_beyond_x_mm":p["reinforcement_end"],
         "translated_bore_symmetric_difference_mm3":bore_diff,
         "screw_motion":motion,
         "reference_reel":{"diameter_mm":177,"hub_diameter_mm":13.3,"width_mm":12,
                           "remaining_axial_play_mm":seat-face-12},
         "limits":["The previous screw mechanism passed the user's physical test; its STL is unchanged.",
-                  "The integrated arm and added reel clearance have not been physically tested.",
-                  "Root geometry is checked for solid continuity; no mechanical load or fatigue test was performed.",
+                  "Prototype 02 worked in the user's physical test, with excess reel play and arm flex under a full reel.",
+                  "Prototype 03's shortened thimble and reinforced arm have not been physically tested.",
+                  "Beam thickness and solid continuity are checked; no mechanical load or fatigue test was performed.",
                   "Neighboring feeder spacing is outside this revision's validation scope, as requested."],
     }
     (OUT/"integrated-geometry-check.json").write_text(json.dumps(report,indent=2)+"\n")

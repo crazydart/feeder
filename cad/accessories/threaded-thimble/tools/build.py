@@ -9,7 +9,8 @@ PARTS = {
     "thimble": "threaded-thimble-prototype-01.stl",
     "screw": "reel-retaining-screw-30mm-prototype-01.stl",
 }
-INTEGRATED_ARM = "spool-arm-integrated-thimble-plus2mm-prototype-02.stl"
+INTEGRATED_ARM = "spool-arm-reinforced-integrated-thimble-prototype-03.stl"
+PROTOTYPE_02_ARM = "spool-arm-integrated-thimble-plus2mm-prototype-02.stl"
 
 
 def discard_zero_area_triangles(path):
@@ -37,10 +38,13 @@ def discard_zero_area_triangles(path):
 if __name__ == "__main__":
     parser = argparse.ArgumentParser()
     parser.add_argument("--legacy", action="store_true")
+    parser.add_argument("--prototype", choices=["02", "03"], default="03")
     args = parser.parse_args()
     (HERE / "stl").mkdir(exist_ok=True)
+    arm_export = ("arm", INTEGRATED_ARM, "integrated-arm.scad") if args.prototype == "03" else (
+        "arm", PROTOTYPE_02_ARM, "integrated-arm-prototype-02.scad")
     exports = [(part, filename, "thimble.scad") for part, filename in PARTS.items()] if args.legacy else [
-        ("arm", INTEGRATED_ARM, "integrated-arm.scad"),
+        arm_export,
         ("screw", PARTS["screw"], "thimble.scad"),
     ]
     for part, filename, source in exports:

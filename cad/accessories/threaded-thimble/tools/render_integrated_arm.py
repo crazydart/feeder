@@ -1,13 +1,21 @@
-"""Render prototype 02 from the actual print STL and unchanged cap STL."""
+"""Render prototype 03 from the actual print STL and unchanged cap STL."""
 import math
 import json
+import re
 import subprocess
+import sys
 from pathlib import Path
 import bpy
 from mathutils import Vector
 
 HERE = Path(__file__).resolve().parents[1]
-OUT = HERE / "renders/prototype-02"
+sys.path.insert(0,str(Path(__file__).parent))
+from build import INTEGRATED_ARM, PARTS
+PARAMS = {k:float(v) for k,v in re.findall(r"^(\w+)\s*=\s*(-?[\d.]+)\s*;",
+                                         (HERE/"integrated-arm.scad").read_text(),re.M)}
+CAP_Z = (PARAMS["original_seat_z"]+PARAMS["spindle_extension"]+
+         PARAMS["reinforcement_height"]-PARAMS["arm_back_z"]+3)
+OUT = HERE / "renders/prototype-03"
 OUT.mkdir(parents=True,exist_ok=True)
 bpy.ops.object.select_all(action="SELECT")
 bpy.ops.object.delete(use_global=False)
@@ -81,22 +89,22 @@ area((-80,50,140),(50,-20,5),220000,110)
 area((160,80,180),(50,-20,5),280000,100)
 bpy.ops.mesh.primitive_plane_add(size=1000,location=(0,0,-.06))
 floor=bpy.context.object;floor.data.materials.append(FLOOR)
-arm=load("spool-arm-integrated-thimble-plus2mm-prototype-02.stl",TEAL)
-cap=load("reel-retaining-screw-30mm-prototype-01.stl",ORANGE)
+arm=load(INTEGRATED_ARM,TEAL)
+cap=load(PARTS["screw"],ORANGE)
 cap.location=(0,-32,0)
 camera((100,-180,175),(60,-22,2),190)
 render("01-integrated-arm.png")
 
 # A close view of the actual junction, with the existing screw seated.
-cap.rotation_euler.x=math.pi;cap.location=(0,0,18.9)
+cap.rotation_euler.x=math.pi;cap.location=(0,0,CAP_Z)
 camera((32,-58,36),(3,0,9),55)
 render("02-hub-and-cap.png")
 
 # Crop only the display copy of the arm and cut a section through its hub.
 # Rotate both parts equally to keep the section away from the pilot slots.
 arm.hide_render=True;cap.hide_render=True
-load_path(section("spool-arm-integrated-thimble-plus2mm-prototype-02.stl",""),TEAL)
-load_path(section("reel-retaining-screw-30mm-prototype-01.stl",
-                  "translate([0,0,18.9]) rotate([180,0,0])"),ORANGE)
-camera((15,-60,36),(1,0,8),52)
+load_path(section(INTEGRATED_ARM,""),TEAL)
+load_path(section(PARTS["screw"],
+                  f"translate([0,0,{CAP_Z}]) rotate([180,0,0])"),ORANGE)
+camera((15,-60,38),(1,0,10),55)
 render("03-integrated-section.png")
