@@ -10,7 +10,7 @@ import subprocess
 from pathlib import Path
 import numpy as np
 import trimesh
-from build import INTEGRATED_ARM, PARTS, PROTOTYPE_02_ARM
+from build import INTEGRATED_ARM, PARTS, PROTOTYPE_02_ARM, PROTOTYPE_03_ARM
 from check_geometry import common, volume, bounds_box
 
 HERE = Path(__file__).resolve().parents[1]
@@ -42,7 +42,7 @@ def main():
     down = (n[:,2]<-1e-5)&(c[:,2]>.02)
     flat_area = float(print_mesh.area_faces[down&(n[:,2]<-.99999)].sum())
     # Boolean intersections leave float32 sliver facets along the chamfer
-    # and taper edge. Record them; screen practical overhangs on faces whose
+    # and reinforcement edge. Record them; screen practical overhangs on faces whose
     # smallest altitude exceeds 0.00001 mm, with a strict total-area limit.
     longest_edge = np.linalg.norm(np.roll(print_mesh.triangles,1,axis=1)-
                                   print_mesh.triangles,axis=2).max(axis=1)
@@ -60,19 +60,42 @@ def main():
     additions = trimesh.boolean.difference([arm,original],engine="manifold")
     attachment = bounds_box([p["reinforcement_end"],-70,-5],[150,20,25])
     assert volume(common(additions,attachment)) < .001, "Feeder attachment changed"
+    guard_region = bounds_box([100,-70,face+.0001],[150,20,25])
+    assert volume(common(additions,guard_region)) < .001, "Raised tape guard changed"
+
+    # Independently extrude the original low top-face triangles: every point
+    # of that entire beam footprint, including the diagonal guard junction,
+    # must contain the added thickness. This catches a narrow/tapered neck
+    # that a few section samples could miss.
+    flat = ((original.face_normals[:,2]>.99999) &
+            (abs(original.triangles_center[:,2]-old_face)<.001))
+    triangles = original.triangles[flat,:,:2]
+    vertices, inverse = np.unique(triangles.reshape(-1,2),axis=0,return_inverse=True)
+    required = trimesh.creation.extrude_triangulation(vertices,inverse.reshape(-1,3),extra)
+    required.apply_translation([0,0,old_face])
+    missing_reinforcement = volume(trimesh.boolean.difference([required,arm],engine="manifold"))
+    assert missing_reinforcement < .001, "Thin spot before the tape guard"
+    assert abs(face-back-4) < 1e-9
 
     thickness = []
-    for x,y in [(20,-9),(50,-20),(80,-34),(100,-43),(108,-46.5),(111.5,-46.5)]:
+    for x,y in [(20,-9),(50,-20),(80,-34),(100,-43),(108,-46.5),
+                (111.5,-46.5),(114,-44),(115,-43.6)]:
         zs, original_zs = [] , []
         for mesh,values in [(arm,zs),(original,original_zs)]:
             hits,_,_ = mesh.ray.intersects_location([[x,y,-10]],[[0,0,1]])
             values.extend(hits[:,2])
         measured, prior = max(zs)-min(zs), max(original_zs)-min(original_zs)
-        ramp = min(1,max(0,(p["reinforcement_end"]-x)/
-                         (p["reinforcement_end"]-p["reinforcement_taper_start"])))
-        assert abs(measured-(prior+extra*ramp)) < .002
+        # The final ray crosses the original lower perimeter chamfer.
+        # Even there, the new top must remain 4 mm above the bed datum,
+        # with the full 1.5 mm reinforcement and no upper-face taper.
+        assert abs(max(zs)-back-4) < .002, (x, y, zs)
+        assert abs(measured-prior-extra) < .002, (x, y, measured, prior)
+        if abs(prior-2.5) < .002:
+            assert abs(measured-4) < .002
         thickness.append({"x_mm":x,"y_mm":y,"original_mm":float(prior),
-                          "reinforced_mm":float(measured)})
+                          "reinforced_mm":float(measured),
+                          "top_above_bed_datum_mm":float(max(zs)-back),
+                          "original_lower_edge_chamfer_mm":float(min(original_zs)-back)})
 
     # The socket must now be solid through the entire thickness of the arm.
     backing = trimesh.creation.cylinder(radius=8.4,height=face-back-.02,sections=128)
@@ -100,6 +123,9 @@ def main():
     previous = json.loads((HERE/"validation-prototype-02.json").read_text())
     assert hashlib.sha256((HERE/"stl"/PROTOTYPE_02_ARM).read_bytes()).hexdigest() == previous["arm_sha256"]
     assert abs((seat-face)-previous["revised_reel_space_mm"]+1) < 1e-9
+    prototype_03 = json.loads((HERE/"validation-prototype-03.json").read_text())
+    assert hashlib.sha256((HERE/"stl"/PROTOTYPE_03_ARM).read_bytes()).hexdigest() == prototype_03["arm_sha256"]
+    assert abs((seat-face)-prototype_03["revised_reel_space_mm"]) < 1e-9
 
     motion = []
     for turn in np.linspace(0,1,17):
@@ -121,7 +147,7 @@ def main():
         assert volume(common(cap,placed)) < .001
 
     report = {
-        "prototype":"03", "parameters":p,
+        "prototype":"04", "parameters":p,
         "arm_file":INTEGRATED_ARM,
         "arm_sha256":hashlib.sha256((HERE/"stl"/INTEGRATED_ARM).read_bytes()).hexdigest(),
         "screw_file":PARTS["screw"], "screw_sha256":cap_hash, "screw_unchanged":True,
@@ -139,6 +165,10 @@ def main():
         "reel_contact_face_native_z_mm":face,
         "screw_seat_native_z_mm":seat,
         "reinforced_sections":thickness,
+        "continuous_beam_thickness_mm":face-back,
+        "missing_reinforcement_over_entire_original_beam_mm3":missing_reinforcement,
+        "original_low_beam_max_x_mm":float(triangles[:,:,0].max()),
+        "raised_tape_guard_unchanged":True,
         "feeder_attachment_unchanged_beyond_x_mm":p["reinforcement_end"],
         "translated_bore_symmetric_difference_mm3":bore_diff,
         "screw_motion":motion,
@@ -146,7 +176,7 @@ def main():
                           "remaining_axial_play_mm":seat-face-12},
         "limits":["The previous screw mechanism passed the user's physical test; its STL is unchanged.",
                   "Prototype 02 worked in the user's physical test, with excess reel play and arm flex under a full reel.",
-                  "Prototype 03's shortened thimble and reinforced arm have not been physically tested.",
+                  "Prototype 04's continuous 4 mm arm has not been physically tested.",
                   "Beam thickness and solid continuity are checked; no mechanical load or fatigue test was performed.",
                   "Neighboring feeder spacing is outside this revision's validation scope, as requested."],
     }

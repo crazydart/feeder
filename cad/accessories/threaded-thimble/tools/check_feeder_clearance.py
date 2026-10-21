@@ -35,7 +35,7 @@ def main():
     transform[:3,3] = [float(p[k]) for k in ["Px","Py","Pz"]]
     inverse = np.linalg.inv(transform)
     geometry = json.loads((HERE/"generated/integrated-geometry-check.json").read_text())
-    assert geometry["prototype"] == "03"
+    assert geometry["prototype"] == "04"
     arm_path = HERE/"stl"/INTEGRATED_ARM
     assert hashlib.sha256(arm_path.read_bytes()).hexdigest() == geometry["arm_sha256"]
     arm = trimesh.load_mesh(arm_path)
@@ -63,7 +63,7 @@ def main():
               "arm_sha256":geometry["arm_sha256"], "parts_checked":len(results),
               "parts":results,
               "scope":"Saved assembly position; added material only. Does not test moving parts over their full travel or loaded deflection."}
-    (HERE/"generated/feeder-clearance-prototype-03.json").write_text(json.dumps(report,indent=2)+"\n")
+    (HERE/"generated/feeder-clearance-prototype-04.json").write_text(json.dumps(report,indent=2)+"\n")
     print(f"No added-material collisions across {len(results)} feeder assembly meshes.")
     print(f"{sum(r['method']=='solid intersection' for r in results)} nearby meshes checked by solid intersection.")
 

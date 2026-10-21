@@ -1,0 +1,800 @@
+{
+  "prototype": "04",
+  "parameters": {
+    "spindle_extension": 1.0,
+    "arm_back_z": -2.4,
+    "arm_face_z": 0.1,
+    "reinforcement_height": 1.5,
+    "reinforcement_end": 116.0,
+    "original_seat_z": 11.5,
+    "spindle_diameter": 11.5,
+    "socket_fill_radius": 8.5,
+    "root_fillet_radius": 0.4
+  },
+  "arm_file": "spool-arm-continuous-4mm-integrated-thimble-prototype-04.stl",
+  "arm_sha256": "706e894cdc51de305559abe8a907b1a5df33737a21fa61eb43ff271c9828b01e",
+  "screw_file": "reel-retaining-screw-30mm-prototype-01.stl",
+  "screw_sha256": "80dd714aeb45d95ed60377b32a1c2309a9112dfa84ccf5a390ec56576fecb5f1",
+  "screw_unchanged": true,
+  "watertight": true,
+  "connected_solids": 1,
+  "bounds_print_mm": [
+    [
+      -10.099267959594727,
+      -55.20000076293945,
+      0.0
+    ],
+    [
+      139.89999389648438,
+      9.799778938293457,
+      16.399999618530273
+    ]
+  ],
+  "volume_mm3": 11318.944202523213,
+  "elevated_flat_underside_area_mm2": 6.3572952058166265e-06,
+  "minimum_underside_angle_from_horizontal_deg": 44.50542701975972,
+  "excluded_sub_micron_downward_sliver_area_mm2": 1.0540991243652946e-05,
+  "original_arm_material_removed_mm3": 4.017289090067303e-05,
+  "socket_solid_through_arm": true,
+  "solid_spindle_root_diameter_mm": 11.5,
+  "original_reel_space_mm": 11.4,
+  "prototype_02_reel_space_mm": 13.4,
+  "revised_reel_space_mm": 12.4,
+  "added_reel_space_mm": 1.0,
+  "reduction_from_prototype_02_mm": 1.0,
+  "reel_contact_face_native_z_mm": 1.6,
+  "screw_seat_native_z_mm": 14.0,
+  "reinforced_sections": [
+    {
+      "x_mm": 20,
+      "y_mm": -9,
+      "original_mm": 2.5000000968575478,
+      "reinforced_mm": 4.0,
+      "top_above_bed_datum_mm": 3.9999999999999996,
+      "original_lower_edge_chamfer_mm": -9.536743172944284e-08
+    },
+    {
+      "x_mm": 50,
+      "y_mm": -20,
+      "original_mm": 2.5000000968575478,
+      "reinforced_mm": 4.0,
+      "top_above_bed_datum_mm": 3.9999999999999996,
+      "original_lower_edge_chamfer_mm": -9.536743172944284e-08
+    },
+    {
+      "x_mm": 80,
+      "y_mm": -34,
+      "original_mm": 2.5000000968575478,
+      "reinforced_mm": 4.0,
+      "top_above_bed_datum_mm": 3.9999999999999996,
+      "original_lower_edge_chamfer_mm": -9.536743172944284e-08
+    },
+    {
+      "x_mm": 100,
+      "y_mm": -43,
+      "original_mm": 2.5000000968575478,
+      "reinforced_mm": 4.0,
+      "top_above_bed_datum_mm": 3.9999999999999996,
+      "original_lower_edge_chamfer_mm": -9.536743172944284e-08
+    },
+    {
+      "x_mm": 108,
+      "y_mm": -46.5,
+      "original_mm": 2.5000000968575478,
+      "reinforced_mm": 4.0,
+      "top_above_bed_datum_mm": 3.9999999999999996,
+      "original_lower_edge_chamfer_mm": -9.536743172944284e-08
+    },
+    {
+      "x_mm": 111.5,
+      "y_mm": -46.5,
+      "original_mm": 2.5000000968575478,
+      "reinforced_mm": 4.0,
+      "top_above_bed_datum_mm": 3.9999999999999996,
+      "original_lower_edge_chamfer_mm": -9.536743172944284e-08
+    },
+    {
+      "x_mm": 114,
+      "y_mm": -44,
+      "original_mm": 2.5000000968575478,
+      "reinforced_mm": 4.0,
+      "top_above_bed_datum_mm": 3.9999999999999996,
+      "original_lower_edge_chamfer_mm": -9.536743172944284e-08
+    },
+    {
+      "x_mm": 115,
+      "y_mm": -43.6,
+      "original_mm": 2.1128986953971456,
+      "reinforced_mm": 3.6128986863407206,
+      "top_above_bed_datum_mm": 3.9999999999999996,
+      "original_lower_edge_chamfer_mm": 0.38710130609297044
+    }
+  ],
+  "continuous_beam_thickness_mm": 4.0,
+  "missing_reinforcement_over_entire_original_beam_mm3": 9.546115203799369e-06,
+  "original_low_beam_max_x_mm": 115.2245101928711,
+  "raised_tape_guard_unchanged": true,
+  "feeder_attachment_unchanged_beyond_x_mm": 116.0,
+  "translated_bore_symmetric_difference_mm3": 1.2717296082579804e-05,
+  "screw_motion": [
+    {
+      "turns_out": 0.0,
+      "pilot_interference_mm3": 1.4486878698498014
+    },
+    {
+      "turns_out": 0.0625,
+      "pilot_interference_mm3": 1.280940082381747
+    },
+    {
+      "turns_out": 0.125,
+      "pilot_interference_mm3": 1.1131921064403845
+    },
+    {
+      "turns_out": 0.1875,
+      "pilot_interference_mm3": 0.945443913831781
+    },
+    {
+      "turns_out": 0.25,
+      "pilot_interference_mm3": 0.777695660643199
+    },
+    {
+      "turns_out": 0.3125,
+      "pilot_interference_mm3": 0.6099477403466741
+    },
+    {
+      "turns_out": 0.375,
+      "pilot_interference_mm3": 0.44219971547728204
+    },
+    {
+      "turns_out": 0.4375,
+      "pilot_interference_mm3": 0.2744515720371214
+    },
+    {
+      "turns_out": 0.5,
+      "pilot_interference_mm3": 0.10670345143659314
+    },
+    {
+      "turns_out": 0.5625,
+      "pilot_interference_mm3": 0.0
+    },
+    {
+      "turns_out": 0.625,
+      "pilot_interference_mm3": 0.0
+    },
+    {
+      "turns_out": 0.6875,
+      "pilot_interference_mm3": 0.0
+    },
+    {
+      "turns_out": 0.75,
+      "pilot_interference_mm3": 0.0
+    },
+    {
+      "turns_out": 0.8125,
+      "pilot_interference_mm3": 0.0
+    },
+    {
+      "turns_out": 0.875,
+      "pilot_interference_mm3": 0.0
+    },
+    {
+      "turns_out": 0.9375,
+      "pilot_interference_mm3": 0.0
+    },
+    {
+      "turns_out": 1.0,
+      "pilot_interference_mm3": 0.0
+    }
+  ],
+  "reference_reel": {
+    "diameter_mm": 177,
+    "hub_diameter_mm": 13.3,
+    "width_mm": 12,
+    "remaining_axial_play_mm": 0.40000000000000036
+  },
+  "limits": [
+    "The previous screw mechanism passed the user's physical test; its STL is unchanged.",
+    "Prototype 02 worked in the user's physical test, with excess reel play and arm flex under a full reel.",
+    "Prototype 04's continuous 4 mm arm has not been physically tested.",
+    "Beam thickness and solid continuity are checked; no mechanical load or fatigue test was performed.",
+    "Neighboring feeder spacing is outside this revision's validation scope, as requested."
+  ],
+  "feeder_assembly_clearance": {
+    "assembly": "cad/assembly-8.FCStd",
+    "assembly_sha256": "6da1d066355ba03905357e3ec223dfc0986af4f37d52bb8a05cfd81f0e64bc24",
+    "arm_sha256": "706e894cdc51de305559abe8a907b1a5df33737a21fa61eb43ff271c9828b01e",
+    "parts_checked": 93,
+    "parts": [
+      {
+        "label": "frame-8",
+        "source": "FDM/frame-8.FCStd",
+        "method": "separated bounding boxes",
+        "added_material_overlap_mm3": 0.0
+      },
+      {
+        "label": "feeder-mobo",
+        "source": "PCB/feeder-mobo.FCStd",
+        "method": "separated bounding boxes",
+        "added_material_overlap_mm3": 0.0
+      },
+      {
+        "label": "feeder-mobo",
+        "source": "PCB/feeder-mobo.FCStd",
+        "method": "separated bounding boxes",
+        "added_material_overlap_mm3": 0.0
+      },
+      {
+        "label": "feeder-mobo",
+        "source": "PCB/feeder-mobo.FCStd",
+        "method": "separated bounding boxes",
+        "added_material_overlap_mm3": 0.0
+      },
+      {
+        "label": "feeder-mobo",
+        "source": "PCB/feeder-mobo.FCStd",
+        "method": "separated bounding boxes",
+        "added_material_overlap_mm3": 0.0
+      },
+      {
+        "label": "feeder-mobo",
+        "source": "PCB/feeder-mobo.FCStd",
+        "method": "separated bounding boxes",
+        "added_material_overlap_mm3": 0.0
+      },
+      {
+        "label": "feeder-mobo",
+        "source": "PCB/feeder-mobo.FCStd",
+        "method": "separated bounding boxes",
+        "added_material_overlap_mm3": 0.0
+      },
+      {
+        "label": "feeder-mobo",
+        "source": "PCB/feeder-mobo.FCStd",
+        "method": "separated bounding boxes",
+        "added_material_overlap_mm3": 0.0
+      },
+      {
+        "label": "feeder-mobo",
+        "source": "PCB/feeder-mobo.FCStd",
+        "method": "separated bounding boxes",
+        "added_material_overlap_mm3": 0.0
+      },
+      {
+        "label": "feeder-mobo",
+        "source": "PCB/feeder-mobo.FCStd",
+        "method": "separated bounding boxes",
+        "added_material_overlap_mm3": 0.0
+      },
+      {
+        "label": "feeder-mobo",
+        "source": "PCB/feeder-mobo.FCStd",
+        "method": "separated bounding boxes",
+        "added_material_overlap_mm3": 0.0
+      },
+      {
+        "label": "feeder-mobo",
+        "source": "PCB/feeder-mobo.FCStd",
+        "method": "separated bounding boxes",
+        "added_material_overlap_mm3": 0.0
+      },
+      {
+        "label": "feeder-mobo",
+        "source": "PCB/feeder-mobo.FCStd",
+        "method": "separated bounding boxes",
+        "added_material_overlap_mm3": 0.0
+      },
+      {
+        "label": "feeder-mobo",
+        "source": "PCB/feeder-mobo.FCStd",
+        "method": "separated bounding boxes",
+        "added_material_overlap_mm3": 0.0
+      },
+      {
+        "label": "feeder-mobo",
+        "source": "PCB/feeder-mobo.FCStd",
+        "method": "separated bounding boxes",
+        "added_material_overlap_mm3": 0.0
+      },
+      {
+        "label": "feeder-mobo",
+        "source": "PCB/feeder-mobo.FCStd",
+        "method": "separated bounding boxes",
+        "added_material_overlap_mm3": 0.0
+      },
+      {
+        "label": "feeder-mobo",
+        "source": "PCB/feeder-mobo.FCStd",
+        "method": "separated bounding boxes",
+        "added_material_overlap_mm3": 0.0
+      },
+      {
+        "label": "feeder-mobo",
+        "source": "PCB/feeder-mobo.FCStd",
+        "method": "separated bounding boxes",
+        "added_material_overlap_mm3": 0.0
+      },
+      {
+        "label": "feeder-mobo",
+        "source": "PCB/feeder-mobo.FCStd",
+        "method": "separated bounding boxes",
+        "added_material_overlap_mm3": 0.0
+      },
+      {
+        "label": "feeder-mobo",
+        "source": "PCB/feeder-mobo.FCStd",
+        "method": "separated bounding boxes",
+        "added_material_overlap_mm3": 0.0
+      },
+      {
+        "label": "feeder-mobo",
+        "source": "PCB/feeder-mobo.FCStd",
+        "method": "separated bounding boxes",
+        "added_material_overlap_mm3": 0.0
+      },
+      {
+        "label": "feeder-mobo",
+        "source": "PCB/feeder-mobo.FCStd",
+        "method": "separated bounding boxes",
+        "added_material_overlap_mm3": 0.0
+      },
+      {
+        "label": "feeder-mobo",
+        "source": "PCB/feeder-mobo.FCStd",
+        "method": "separated bounding boxes",
+        "added_material_overlap_mm3": 0.0
+      },
+      {
+        "label": "feeder-mobo",
+        "source": "PCB/feeder-mobo.FCStd",
+        "method": "separated bounding boxes",
+        "added_material_overlap_mm3": 0.0
+      },
+      {
+        "label": "feeder-mobo",
+        "source": "PCB/feeder-mobo.FCStd",
+        "method": "separated bounding boxes",
+        "added_material_overlap_mm3": 0.0
+      },
+      {
+        "label": "feeder-mobo",
+        "source": "PCB/feeder-mobo.FCStd",
+        "method": "separated bounding boxes",
+        "added_material_overlap_mm3": 0.0
+      },
+      {
+        "label": "feeder-mobo",
+        "source": "PCB/feeder-mobo.FCStd",
+        "method": "separated bounding boxes",
+        "added_material_overlap_mm3": 0.0
+      },
+      {
+        "label": "feeder-mobo",
+        "source": "PCB/feeder-mobo.FCStd",
+        "method": "separated bounding boxes",
+        "added_material_overlap_mm3": 0.0
+      },
+      {
+        "label": "feeder-mobo",
+        "source": "PCB/feeder-mobo.FCStd",
+        "method": "separated bounding boxes",
+        "added_material_overlap_mm3": 0.0
+      },
+      {
+        "label": "feeder-mobo",
+        "source": "PCB/feeder-mobo.FCStd",
+        "method": "separated bounding boxes",
+        "added_material_overlap_mm3": 0.0
+      },
+      {
+        "label": "feeder-mobo",
+        "source": "PCB/feeder-mobo.FCStd",
+        "method": "separated bounding boxes",
+        "added_material_overlap_mm3": 0.0
+      },
+      {
+        "label": "feeder-mobo",
+        "source": "PCB/feeder-mobo.FCStd",
+        "method": "separated bounding boxes",
+        "added_material_overlap_mm3": 0.0
+      },
+      {
+        "label": "feeder-mobo",
+        "source": "PCB/feeder-mobo.FCStd",
+        "method": "separated bounding boxes",
+        "added_material_overlap_mm3": 0.0
+      },
+      {
+        "label": "feeder-mobo",
+        "source": "PCB/feeder-mobo.FCStd",
+        "method": "separated bounding boxes",
+        "added_material_overlap_mm3": 0.0
+      },
+      {
+        "label": "feeder-mobo",
+        "source": "PCB/feeder-mobo.FCStd",
+        "method": "separated bounding boxes",
+        "added_material_overlap_mm3": 0.0
+      },
+      {
+        "label": "feeder-mobo",
+        "source": "PCB/feeder-mobo.FCStd",
+        "method": "separated bounding boxes",
+        "added_material_overlap_mm3": 0.0
+      },
+      {
+        "label": "feeder-mobo",
+        "source": "PCB/feeder-mobo.FCStd",
+        "method": "separated bounding boxes",
+        "added_material_overlap_mm3": 0.0
+      },
+      {
+        "label": "feeder-mobo",
+        "source": "PCB/feeder-mobo.FCStd",
+        "method": "separated bounding boxes",
+        "added_material_overlap_mm3": 0.0
+      },
+      {
+        "label": "feeder-mobo",
+        "source": "PCB/feeder-mobo.FCStd",
+        "method": "separated bounding boxes",
+        "added_material_overlap_mm3": 0.0
+      },
+      {
+        "label": "feeder-mobo",
+        "source": "PCB/feeder-mobo.FCStd",
+        "method": "separated bounding boxes",
+        "added_material_overlap_mm3": 0.0
+      },
+      {
+        "label": "feeder-mobo",
+        "source": "PCB/feeder-mobo.FCStd",
+        "method": "separated bounding boxes",
+        "added_material_overlap_mm3": 0.0
+      },
+      {
+        "label": "feeder-mobo",
+        "source": "PCB/feeder-mobo.FCStd",
+        "method": "separated bounding boxes",
+        "added_material_overlap_mm3": 0.0
+      },
+      {
+        "label": "feeder-mobo",
+        "source": "PCB/feeder-mobo.FCStd",
+        "method": "separated bounding boxes",
+        "added_material_overlap_mm3": 0.0
+      },
+      {
+        "label": "feeder-mobo",
+        "source": "PCB/feeder-mobo.FCStd",
+        "method": "separated bounding boxes",
+        "added_material_overlap_mm3": 0.0
+      },
+      {
+        "label": "feeder-mobo",
+        "source": "PCB/feeder-mobo.FCStd",
+        "method": "separated bounding boxes",
+        "added_material_overlap_mm3": 0.0
+      },
+      {
+        "label": "feeder-mobo",
+        "source": "PCB/feeder-mobo.FCStd",
+        "method": "separated bounding boxes",
+        "added_material_overlap_mm3": 0.0
+      },
+      {
+        "label": "feeder-mobo",
+        "source": "PCB/feeder-mobo.FCStd",
+        "method": "separated bounding boxes",
+        "added_material_overlap_mm3": 0.0
+      },
+      {
+        "label": "feeder-mobo",
+        "source": "PCB/feeder-mobo.FCStd",
+        "method": "separated bounding boxes",
+        "added_material_overlap_mm3": 0.0
+      },
+      {
+        "label": "feeder-mobo",
+        "source": "PCB/feeder-mobo.FCStd",
+        "method": "separated bounding boxes",
+        "added_material_overlap_mm3": 0.0
+      },
+      {
+        "label": "feeder-mobo",
+        "source": "PCB/feeder-mobo.FCStd",
+        "method": "separated bounding boxes",
+        "added_material_overlap_mm3": 0.0
+      },
+      {
+        "label": "feeder-mobo",
+        "source": "PCB/feeder-mobo.FCStd",
+        "method": "separated bounding boxes",
+        "added_material_overlap_mm3": 0.0
+      },
+      {
+        "label": "feeder-mobo",
+        "source": "PCB/feeder-mobo.FCStd",
+        "method": "separated bounding boxes",
+        "added_material_overlap_mm3": 0.0
+      },
+      {
+        "label": "feeder-mobo",
+        "source": "PCB/feeder-mobo.FCStd",
+        "method": "separated bounding boxes",
+        "added_material_overlap_mm3": 0.0
+      },
+      {
+        "label": "feeder-mobo",
+        "source": "PCB/feeder-mobo.FCStd",
+        "method": "separated bounding boxes",
+        "added_material_overlap_mm3": 0.0
+      },
+      {
+        "label": "feeder-mobo",
+        "source": "PCB/feeder-mobo.FCStd",
+        "method": "separated bounding boxes",
+        "added_material_overlap_mm3": 0.0
+      },
+      {
+        "label": "feeder-mobo",
+        "source": "PCB/feeder-mobo.FCStd",
+        "method": "separated bounding boxes",
+        "added_material_overlap_mm3": 0.0
+      },
+      {
+        "label": "feeder-mobo",
+        "source": "PCB/feeder-mobo.FCStd",
+        "method": "separated bounding boxes",
+        "added_material_overlap_mm3": 0.0
+      },
+      {
+        "label": "feeder-mobo",
+        "source": "PCB/feeder-mobo.FCStd",
+        "method": "separated bounding boxes",
+        "added_material_overlap_mm3": 0.0
+      },
+      {
+        "label": "feeder-mobo",
+        "source": "PCB/feeder-mobo.FCStd",
+        "method": "separated bounding boxes",
+        "added_material_overlap_mm3": 0.0
+      },
+      {
+        "label": "feeder-mobo",
+        "source": "PCB/feeder-mobo.FCStd",
+        "method": "separated bounding boxes",
+        "added_material_overlap_mm3": 0.0
+      },
+      {
+        "label": "feeder-mobo",
+        "source": "PCB/feeder-mobo.FCStd",
+        "method": "separated bounding boxes",
+        "added_material_overlap_mm3": 0.0
+      },
+      {
+        "label": "fiducialBoard",
+        "source": "PCB/photon-8mm-fidPCB.FCStd",
+        "method": "separated bounding boxes",
+        "added_material_overlap_mm3": 0.0
+      },
+      {
+        "label": "fiducialBoard",
+        "source": "PCB/photon-8mm-fidPCB.FCStd",
+        "method": "separated bounding boxes",
+        "added_material_overlap_mm3": 0.0
+      },
+      {
+        "label": "fiducialBoard",
+        "source": "PCB/photon-8mm-fidPCB.FCStd",
+        "method": "separated bounding boxes",
+        "added_material_overlap_mm3": 0.0
+      },
+      {
+        "label": "light-diffusion",
+        "source": "PCB/light-diffuser-pcb.FCStd",
+        "method": "separated bounding boxes",
+        "added_material_overlap_mm3": 0.0
+      },
+      {
+        "label": "micro-metal-gearmotor-carbon v1",
+        "source": "OTS/n20-motor.FCStd",
+        "method": "separated bounding boxes",
+        "added_material_overlap_mm3": 0.0
+      },
+      {
+        "label": "right-angle-n20",
+        "source": "OTS/right-angle-n20.FCStd",
+        "method": "separated bounding boxes",
+        "added_material_overlap_mm3": 0.0
+      },
+      {
+        "label": "indexing-wheel",
+        "source": "MCM/indexing-wheel.FCStd",
+        "method": "separated bounding boxes",
+        "added_material_overlap_mm3": 0.0
+      },
+      {
+        "label": "shaft-collar",
+        "source": "MCM/shaft-collar.FCStd",
+        "method": "separated bounding boxes",
+        "added_material_overlap_mm3": 0.0
+      },
+      {
+        "label": "drive-motor-cover",
+        "source": "FDM/drive-motor-cover.FCStd",
+        "method": "separated bounding boxes",
+        "added_material_overlap_mm3": 0.0
+      },
+      {
+        "label": "peel-worm-gear",
+        "source": "FDM/peel-worm-gear.FCStd",
+        "method": "separated bounding boxes",
+        "added_material_overlap_mm3": 0.0
+      },
+      {
+        "label": "peel-gear-frame",
+        "source": "FDM/peel-gear-frame-8-12.FCStd",
+        "method": "solid intersection",
+        "added_material_overlap_mm3": 0.0
+      },
+      {
+        "label": "drive-motor-bracket",
+        "source": "FDM/drive-motor-bracket.FCStd",
+        "method": "separated bounding boxes",
+        "added_material_overlap_mm3": 0.0
+      },
+      {
+        "label": "peel-gear",
+        "source": "FDM/peel-gear.FCStd",
+        "method": "solid intersection",
+        "added_material_overlap_mm3": 0.0
+      },
+      {
+        "label": "peel-gear001",
+        "source": "FDM/peel-gear.FCStd",
+        "method": "solid intersection",
+        "added_material_overlap_mm3": 0.0
+      },
+      {
+        "label": "release-lever",
+        "source": "FDM/release-lever.FCStd",
+        "method": "separated bounding boxes",
+        "added_material_overlap_mm3": 0.0
+      },
+      {
+        "label": "feeder-compression-spring",
+        "source": "OTS/feeder-compression-spring.FCStd",
+        "method": "separated bounding boxes",
+        "added_material_overlap_mm3": 0.0
+      },
+      {
+        "label": "M3x15-Screw",
+        "source": "assembly-8.FCStd",
+        "method": "separated bounding boxes",
+        "added_material_overlap_mm3": 0.0
+      },
+      {
+        "label": "M3x12mm-self-tapping-flat-hex-head",
+        "source": "OTS/M3x12mm-self-tapping-flat-hex-head.FCStd",
+        "method": "separated bounding boxes",
+        "added_material_overlap_mm3": 0.0
+      },
+      {
+        "label": "M3x12mm-self-tapping-flat-hex-head001",
+        "source": "OTS/M3x12mm-self-tapping-flat-hex-head.FCStd",
+        "method": "separated bounding boxes",
+        "added_material_overlap_mm3": 0.0
+      },
+      {
+        "label": "M3x12mm-self-tapping-flat-hex-head002",
+        "source": "OTS/M3x12mm-self-tapping-flat-hex-head.FCStd",
+        "method": "separated bounding boxes",
+        "added_material_overlap_mm3": 0.0
+      },
+      {
+        "label": "M3x12mm-self-tapping-flat-hex-head003",
+        "source": "OTS/M3x12mm-self-tapping-flat-hex-head.FCStd",
+        "method": "separated bounding boxes",
+        "added_material_overlap_mm3": 0.0
+      },
+      {
+        "label": "M3x12mm-self-tapping-flat-hex-head004",
+        "source": "OTS/M3x12mm-self-tapping-flat-hex-head.FCStd",
+        "method": "separated bounding boxes",
+        "added_material_overlap_mm3": 0.0
+      },
+      {
+        "label": "M3x12mm-self-tapping-flat-hex-head005",
+        "source": "OTS/M3x12mm-self-tapping-flat-hex-head.FCStd",
+        "method": "separated bounding boxes",
+        "added_material_overlap_mm3": 0.0
+      },
+      {
+        "label": "M3x12mm-self-tapping-flat-hex-head006",
+        "source": "OTS/M3x12mm-self-tapping-flat-hex-head.FCStd",
+        "method": "separated bounding boxes",
+        "added_material_overlap_mm3": 0.0
+      },
+      {
+        "label": "M3x12mm-self-tapping-flat-hex-head007",
+        "source": "OTS/M3x12mm-self-tapping-flat-hex-head.FCStd",
+        "method": "separated bounding boxes",
+        "added_material_overlap_mm3": 0.0
+      },
+      {
+        "label": "M3x12mm-self-tapping-flat-hex-head008",
+        "source": "OTS/M3x12mm-self-tapping-flat-hex-head.FCStd",
+        "method": "separated bounding boxes",
+        "added_material_overlap_mm3": 0.0
+      },
+      {
+        "label": "M3x14-Screw",
+        "source": "assembly-8.FCStd",
+        "method": "separated bounding boxes",
+        "added_material_overlap_mm3": 0.0
+      },
+      {
+        "label": "M3x14-Screw001",
+        "source": "assembly-8.FCStd",
+        "method": "solid intersection",
+        "added_material_overlap_mm3": 0.0
+      },
+      {
+        "label": "M3x12mm-self-tapping-flat-hex-head009",
+        "source": "OTS/M3x12mm-self-tapping-flat-hex-head.FCStd",
+        "method": "separated bounding boxes",
+        "added_material_overlap_mm3": 0.0
+      },
+      {
+        "label": "M3x12mm-self-tapping-flat-hex-head010",
+        "source": "OTS/M3x12mm-self-tapping-flat-hex-head.FCStd",
+        "method": "separated bounding boxes",
+        "added_material_overlap_mm3": 0.0
+      },
+      {
+        "label": "M2.5x3mm-set-screw",
+        "source": "OTS/M2_5x3mm-set-screw.FCStd",
+        "method": "separated bounding boxes",
+        "added_material_overlap_mm3": 0.0
+      },
+      {
+        "label": "M2.5x3mm-set-screw",
+        "source": "OTS/M2_5x3mm-set-screw.FCStd",
+        "method": "separated bounding boxes",
+        "added_material_overlap_mm3": 0.0
+      }
+    ],
+    "scope": "Saved assembly position; added material only. Does not test moving parts over their full travel or loaded deflection."
+  },
+  "date": "2026-10-20",
+  "physical_feedback": {
+    "prototype_02": "User reported integrated design works great, but excess reel play and arm wobble with a full reel.",
+    "requested_change": "Make the entire free arm 4 mm thick right up to the cover-tape guard, removing prototype 03's thin transition. The guard keeps peeled cover tape out of the gears.",
+    "prototype_04": "Awaiting print test; 12.4 mm reel space and tested screw unchanged."
+  },
+  "slicing": {
+    "application": "Bambu Studio 02.07.00.55",
+    "printer_profile": "Bambu Lab X1 Carbon 0.4 nozzle",
+    "part": "spool-arm-continuous-4mm-integrated-thimble-prototype-04.stl",
+    "return_code": 0,
+    "warning_message": "",
+    "settings": {
+      "layer_height": "0.16",
+      "initial_layer_print_height": "0.2",
+      "wall_loops": "4",
+      "top_shell_layers": "5",
+      "bottom_shell_layers": "5",
+      "filament_type": "PETG",
+      "sparse_infill_density": "99%",
+      "enable_support": "0"
+    },
+    "support_toolpath_features": 0,
+    "layers": 102,
+    "triangle_count": 119550,
+    "filament_g": 14.213152885437012,
+    "estimated_total_seconds": 3278.5166015625,
+    "archive_integrity_checked": true,
+    "gcode_sha256": "e072ab5de687d2f9cd51cb19d8692535ff49a87bb5d77580dfc1d543cb441c4e",
+    "scope": "Continuous 4 mm integrated arm only; existing screw reused. Machine-specific G-code and expanded profiles are ignored generated artifacts."
+  }
+}

@@ -23,7 +23,7 @@ Hardware remains under CERN-OHL-W v2; see [LICENSE](LICENSE). The modified PCBs 
 
 - [Gridfinity holder for 8 mm feeders](cad/accessories/gridfinity-8mm-holder/README.md) — five slots on a 5 × 3 base, with STL and editable OpenSCAD source. Prototype 06 provides 10 mm of feeder lift and 4 mm radial rear relief for mounted reels; revised reel clearance awaits a physical fit check.
 - [Gridfinity holder for 16 mm and 24 mm feeders](cad/accessories/gridfinity-2u-holder/README.md) — four slots on a 5 × 4 base, rendered with both 2u feeder models. Physical fit is untested.
-- [Reinforced spool arm and threaded thimble](cad/accessories/threaded-thimble/README.md) — a 5 mm thick arm with 12.4 mm of reel space, 1 mm less than prototype 02. Reuses the tested retaining screw with its 30 × 3 mm head; the revised stiffness and clearance await a print test.
+- [Continuous 4 mm spool arm and threaded thimble](cad/accessories/threaded-thimble/README.md) — full arm thickness up to the cover-tape guard, with 12.4 mm of reel space and the tested retaining screw with its 30 × 3 mm head. Prototype 04 has no tapered neck; loaded stiffness awaits a print test.
 
 ## Parts sourcing
 

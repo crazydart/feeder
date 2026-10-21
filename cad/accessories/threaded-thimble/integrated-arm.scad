@@ -1,4 +1,4 @@
-// Reinforced spool arm and integrated threaded thimble, prototype 03. Units: mm.
+// Continuous 4 mm spool arm and integrated thimble, prototype 04. Units: mm.
 // Uses the proven prototype-01 bore and the unchanged retaining screw.
 // Native coordinates match the thimble/arm reference assembly; +Z is outward.
 use <thimble.scad>
@@ -7,9 +7,8 @@ part = "arm"; // [arm, native, bore, section]
 spindle_extension = 1; // Usable reel space is 1 mm less than prototype 02.
 arm_back_z = -2.4;
 arm_face_z = 0.1;
-reinforcement_height = 2.5; // Double the 2.5 mm free-span thickness to 5 mm.
-reinforcement_taper_start = 109;
-reinforcement_end = 114; // Preserve the feeder attachment beyond this plane.
+reinforcement_height = 1.5; // Original 2.5 mm beam plus 1.5 mm = 4 mm throughout.
+reinforcement_end = 116; // Overlap the diagonal tape guard; low beam ends at X=115.225.
 original_seat_z = 11.5;
 spindle_diameter = 11.5;
 socket_fill_radius = 8.5;
@@ -23,7 +22,6 @@ new_seat_z = original_seat_z + bore_shift;
 assert(spindle_extension >= 0);
 assert(spindle_diameter + 2*root_fillet_radius < 13.3);
 assert(reinforcement_height >= 0);
-assert(reinforcement_taper_start < reinforcement_end);
 
 module reinforcement() {
     intersection() {
@@ -37,13 +35,10 @@ module reinforcement() {
                             import("reference/spool-arm.stl",convexity=10);
                     circle(r=socket_fill_radius);
                 }
-        // Extruded X/Z profile tapers into the unchanged feeder attachment.
-        translate([0,20,0]) rotate([90,0,0]) linear_extrude(100)
-            polygon([[-20,arm_face_z-0.02],
-                     [reinforcement_end,arm_face_z-0.02],
-                     [reinforcement_end,arm_face_z],
-                     [reinforcement_taper_start,reel_face_z],
-                     [-20,reel_face_z]]);
+        // Continue at full thickness into the guard, across its diagonal
+        // junction. No ramp or thin neck. The taller guard remains intact.
+        translate([-20,-70,arm_face_z-0.02])
+            cube([reinforcement_end+20,90,reinforcement_height+0.03]);
     }
 }
 

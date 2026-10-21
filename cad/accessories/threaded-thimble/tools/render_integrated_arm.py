@@ -1,4 +1,4 @@
-"""Render prototype 03 from the actual print STL and unchanged cap STL."""
+"""Render prototype 04 from the actual print STL and unchanged cap STL."""
 import math
 import json
 import re
@@ -15,7 +15,7 @@ PARAMS = {k:float(v) for k,v in re.findall(r"^(\w+)\s*=\s*(-?[\d.]+)\s*;",
                                          (HERE/"integrated-arm.scad").read_text(),re.M)}
 CAP_Z = (PARAMS["original_seat_z"]+PARAMS["spindle_extension"]+
          PARAMS["reinforcement_height"]-PARAMS["arm_back_z"]+3)
-OUT = HERE / "renders/prototype-03"
+OUT = HERE / "renders/prototype-04"
 OUT.mkdir(parents=True,exist_ok=True)
 bpy.ops.object.select_all(action="SELECT")
 bpy.ops.object.delete(use_global=False)
@@ -99,6 +99,10 @@ render("01-integrated-arm.png")
 cap.rotation_euler.x=math.pi;cap.location=(0,0,CAP_Z)
 camera((32,-58,36),(3,0,9),55)
 render("02-hub-and-cap.png")
+
+# Show the continuous full-thickness connection to the cover-tape guard.
+camera((90,-100,60),(111,-43,4),55)
+render("04-tape-guard-junction.png")
 
 # Crop only the display copy of the arm and cut a section through its hub.
 # Rotate both parts equally to keep the section away from the pilot slots.
